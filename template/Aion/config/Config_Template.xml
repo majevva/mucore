@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<template_config>
+<Nombre>MuCore Premium</Nombre>
+<Slogan>Lo mejor recien comienza</Slogan>
+<Version>Season 6 ep 3</Version>
+<Exp>9.999x</Exp>
+<Drop>99%</Drop>
+<Max_User_Online>2</Max_User_Online>
+<Facebook>https://www.facebook.com/AOHostPeru.Oficial/</Facebook>
+<Twitter>https://twitter.com</Twitter>
+<YouTube>https://youtube.com</YouTube>
+<Instagram>https://www.instagram.com/</Instagram>
+<Google>https://google.com</Google>
+<Registro>index.php?page_id=register</Registro>
+<Descargas>index.php?page_id=descarga</Descargas>
+<Rankings>index.php?page_id=rankings</Rankings>
+<CastleSiege>index.php?page_id=castle_siegephp</CastleSiege>
+<Recover>index.php?page_id=lost_password</Recover>
+<Foro>/foro</Foro>
+<WebShop>index.php?page_id=aoh_Webshop</WebShop>
+<Plubli_Left>ACA PUBLICIDAD</Plubli_Left>
+<castle_siege_dia>26</castle_siege_dia>
+<castle_siege_mes>03</castle_siege_mes>
+<castle_siege_anio>2018</castle_siege_anio>
+<castle_siege_hora>10</castle_siege_hora>
+<castle_siege_minuto>00</castle_siege_minuto>
+</template_config>

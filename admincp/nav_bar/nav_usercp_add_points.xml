@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<nav_master>
+
+
+ <nav_cat title="Modules [User CP Page]" group="20" icon="fa-dot-circle-o">
+  <nav_option link="index.php?get=usercp_add_points_settings" group="20">Add Points Settings</nav_option>
+ </nav_cat>
+</nav_master>

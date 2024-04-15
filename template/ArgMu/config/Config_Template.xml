@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<template_config>
+<Nombre>MuCore Premium</Nombre>
+<Show_Slider>true</Show_Slider>
+<Show_FB>true</Show_FB>
+<Show_CS>true</Show_CS>
+<Facebook>https://www.facebook.com/AOHostPeru.Oficial/</Facebook>
+<Twitter>https://twitter.com</Twitter>
+<YouTube>https://youtube.com</YouTube>
+<Registro>index.php?page_id=register</Registro>
+<Descargas>index.php?page_id=descarga</Descargas>
+<Foro>/foro</Foro>
+<WebShop>index.php?page_id=aoh_Webshop</WebShop>
+<Plubli_Left>ACA PUBLICIDAD</Plubli_Left>
+</template_config>

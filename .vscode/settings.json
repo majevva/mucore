@@ -1,0 +1,10 @@
+{
+    "snyk.advanced.customEndpoint": "https://app.eu.snyk.io/api",
+    "snyk.advanced.organization": "majevva",
+    "snyk.features.preview": {
+
+    },
+    "snyk.trustedFolders": [
+        "MuCore2.2.0"
+    ]
+}

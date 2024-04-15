@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<webshop_settings>
+<active>1</active>
+<sockets_parts>no</sockets_parts>
+<socket_type>webzen</socket_type>
+<eqe_sockets>no</eqe_sockets>
+
+<shop_disc>off</shop_disc>
+<shop_perc>1</shop_perc>
+</webshop_settings>

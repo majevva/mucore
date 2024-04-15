@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<nav_master>
+ <nav_cat title="Modules" group="19" icon="fa-check-square">
+  <nav_option link="index.php?get=rss_feed" group="19">RSS Feed Settings</nav_option>
+ </nav_cat>
+</nav_master>

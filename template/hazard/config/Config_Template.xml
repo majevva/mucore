@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<template_config>
+
+<Nombre>MuCore Premium</Nombre>
+<Slogan>Lo mejor recien comienza</Slogan>
+
+<Version>Season 6</Version>
+<Exp>9.999x</Exp>
+<Drop>99%</Drop>
+
+
+<Facebook>https://www.facebook.com/AOHostPeru.Oficial/</Facebook>
+<Youtube>#</Youtube>
+<Twitter>#</Twitter>
+<Foro>/foro</Foro>
+
+<slider_titulo1>WebShop con creditos</slider_titulo1>
+<slider_texto1></slider_texto1>
+<slider_link1>#</slider_link1>
+
+<slider_titulo2>Servidor Online 24/7/365</slider_titulo2>
+<slider_texto2></slider_texto2>
+<slider_link2>#</slider_link2>
+
+<slider_titulo3>Cliente Premium</slider_titulo3>
+<slider_texto3>Camara HD, HP Bar</slider_texto3>
+<slider_link3>#</slider_link3>
+
+<slider_titulo4>Staff Amigable</slider_titulo4>
+<slider_texto4></slider_texto4>
+<slider_link4>#</slider_link4>
+
+<WebShop>index.php?page_id=aoh_Webshop</WebShop>
+<Registro>index.php?page_id=register</Registro>
+<Descargas>index.php?page_id=descarga</Descargas>
+
+
+<Plubli_Left>ACA PUBLICIDAD</Plubli_Left>
+
+</template_config>

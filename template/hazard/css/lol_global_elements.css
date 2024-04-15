@@ -1,0 +1,808 @@
+
+
+/*  set a default background image  */
+body {
+  background: rgb(7, 9, 22) url(../images/page-bg.jpg) 50% 0px no-repeat fixed;
+}
+
+#lol-header
+{
+	display: block;
+  z-index: 90;
+  position: relative;
+  width: 100%;
+  min-width: 1016px;
+  height: 172px;
+  margin-bottom: 0;
+  background: transparent url(../images/lol-header-sprite.png) 50% 0px no-repeat;
+}
+#lol-header .section
+{
+  position:relative;
+  width: 1016px;
+  margin: 0 auto;
+}
+#lol-header .lol-header-flang-left 
+{
+  position: absolute;
+  width: 45px;
+  height: 350px;
+  top: 92px;
+  left: -15px;
+  background: transparent url(../images/lol-header-sprite.png) -100px -450px no-repeat;  
+}
+#lol-header .lol-header-flang-right 
+{
+  position: absolute;
+  width: 45px;
+  height: 350px;
+  top: 92px;
+  right: -25px;
+  background: transparent url(../images/lol-header-sprite.png) -150px -450px  no-repeat;
+}
+.lol-header-noflang #lol-header .lol-header-flang
+{
+  display:none;
+}
+
+/**
+ * Navigation menu.
+ */
+#lol-header-nav {
+  display:table;
+  position:absolute;
+  z-index: 95;
+  top: 101px;
+  left: 257px;
+  width: 740px;
+  line-height: 1.1em;
+}
+#lol-header-nav ul {
+  margin:0px;
+}
+#lol-header-nav>ul {
+  display:table-row;
+  height: 52px;
+}
+#lol-header-nav>ul>li {
+  display:table-cell;
+  margin:0px;
+  height: 54px;
+  vertical-align: middle;
+  text-align: center;
+  min-width: 100px;
+}
+#lol-header-nav>ul>li>a {
+  display:table;
+  width:100%;
+  height:54px;
+  background: transparent url(../images/lol-header-sprite.png) -334px -372px no-repeat;
+}
+  #lol-header-nav > ul > li.first > a {
+    padding-left:0px;
+    background-image: none;
+  }
+  #lol-header-nav > ul > li.last > a {
+    padding-right:0px;
+  }
+#lol-header-nav>ul>li:hover>a,
+#lol-header-nav>ul>li>a:hover {
+  background-color:rgba(0,0,0,0.3);
+}
+#lol-header-nav>ul>li>a>span {
+  display:table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+#lol-header-nav .lol-nav-dropdown-trigger
+{
+  position:relative;
+  display:block;
+}
+#lol-header-nav ul li .lol-nav-dropdown-container
+{
+  position:absolute;
+  top:0px;
+  left:0px;
+  display:none;
+  background-color: #20130f;
+}
+#lol-header-nav ul li.last .lol-nav-dropdown-container
+{
+  right:0px;
+  left:auto;
+}
+#lol-header-nav ul li:hover .lol-nav-dropdown-container,
+#lol-header-nav ul li .lol-nav-dropdown-container:hover
+{
+  display:block;
+}
+#lol-header-nav ul ul
+{
+  display:block;
+  margin:0px;
+  padding: 0px;
+}
+  #lol-header-nav ul ul ul
+  {
+    position:relative;
+    top:auto;
+    left:auto;
+  }
+#lol-header-nav ul ul li
+{
+  display:block;
+  margin:0px;
+  padding: 0px;
+  width:207px;
+  height:auto;
+  text-align: left;
+}
+/*  lol-nav-links   */
+#lol-header-nav ul li a
+{
+  text-decoration: none;
+  font-size: 13px;
+  font-family: Tahoma,sans-serif;
+  font-weight: bold;
+  color: #ffc001;
+}
+  #lol-header-nav ul ul li a
+  {
+    display:block;
+    border-bottom: 1px solid #141B23;
+    color: #FFFFFF;
+    background: #20130f none -34px -258px no-repeat;
+    padding: 9px 10px 8px 12px;
+  }
+    #lol-header-nav ul ul li a:hover
+    {
+      color: #ffc001;
+      background: #412921 none -34px -296px no-repeat;
+    }
+  #lol-header-nav ul ul ul li a {
+    padding-left: 20px;
+    color: rgb(0, 89, 155);
+    font-weight: normal;
+  }
+    #lol-header-nav ul ul ul li a:hover {
+      color: rgb(1, 161, 255);
+      background: #151D2A none;
+    }
+
+ /* add custom styling to the dropdowns using positioned visual elements  */
+#lol-header-nav .lol-nav-dropdown-container .lol-nav-leftbar,
+#lol-header-nav .lol-nav-dropdown-container .lol-nav-rightbar
+{
+  display: block;
+  position: absolute;
+  top: 0px;
+  height: 100%;
+  width: 20px;
+  background: transparent url(../images/lol-header-sprite.png) -4px -215px repeat-y;
+}
+#lol-header-nav .lol-nav-dropdown-container .lol-nav-topbar
+{
+  display: block;
+  position: absolute;
+  top: 0px;
+  left: -2px;
+  right: -2px;
+  height: 5px;
+  background: transparent url(../images/lol-header-sprite.png) -30px -203px no-repeat;
+}
+#lol-header-nav .lol-nav-dropdown-container .lol-nav-leftbar
+{
+  left: -9px;
+}
+#lol-header-nav .lol-nav-dropdown-container .lol-nav-rightbar
+{
+  right: -11px;
+}
+#lol-header-nav .lol-nav-dropdown-container .lol-nav-bottombar
+{
+  display: block;
+  position: absolute;
+  bottom: -15px;
+  left: -9px;
+  width: 227px;
+  height: 15px;
+  background: transparent url(../images/lol-header-sprite.png) -24px -231px no-repeat;
+}
+
+/*  Create a 2 column menu for Game Info dropdown */
+#lol-header-nav .menu-315 .lol-nav-dropdown-container
+{
+  width:400px;
+}
+#lol-header-nav .menu-315 .lol-nav-dropdown-container li
+{
+  width:200px;
+}
+#lol-header-nav .menu-315 .lol-nav-dropdown-container .lol-nav-bottombar
+{
+  width: 420px;
+  background: transparent url(../images/lol-header-sprite.png) -24px -215px no-repeat;
+}
+#lol-header-nav .menu-344
+{
+  float:right;
+  clear:right;
+}
+#lol-header-nav .menu-344 a
+{
+  border-left: 1px solid #202020;
+}
+
+
+/**
+ * Play for free button.
+ */
+#lol-header-play-free
+{
+  display: block;
+  position: absolute;
+  top: 0px;
+  right: -10px;
+  height: 100px;
+  background: transparent url(../images/lol-header-sprite.png) -703px -220px no-repeat;
+  width: 365px;
+}
+#lol-header-play-free a
+{
+	display: block;
+	position: absolute;
+	top: 22px;
+	right: 12px;
+	width: 320px;
+	height: 55px;
+  padding-top: 4px;
+  color: #ff3701;
+  text-align: center;
+  text-decoration: none;
+  text-shadow: 0.1em 0.1em 0.15em #333;
+  font-size: 28px;
+  font-family: "ITCFrizQuadrataRoman", "Times New Roman", serif;
+  font-weight: bold;
+  color: #ECC873;
+  line-height: 40px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  background: transparent none;
+}
+  #lol-header-play-free a:hover
+  {
+    background: transparent url(../images/lol-header-sprite.png) -736px -336px no-repeat;
+  }
+  .i18n-de #lol-header-play-free a
+  {
+    font-size: 22px;
+  }
+  .i18n-fr #lol-header-play-free a
+  {
+    font-size:20px;
+  }
+  .i18n-es #lol-header-play-free a
+  {
+    font-size: 26px;
+  }
+  .i18n-pl #lol-header-play-free a
+  {
+    font-size: 25px;
+  }
+  .i18n-ro #lol-header-play-free a
+  {
+    font-size: 25px;
+  }
+
+
+/**
+ * Site name / logo.
+ */
+#lol-header-sitename
+{
+  margin:0;
+  padding:0;
+	display: block;
+	position: absolute;
+  top: 85px;
+  left: 30px;
+}
+#lol-header-sitename a
+{
+	display: block;
+  width: 216px;
+  height: 75px;
+}
+
+
+/**
+ * Footer.
+ */
+#lol-footer
+{
+	display: block;
+  z-index: 1;
+  position: relative;
+  width: 100%;
+  min-width: 1016px;
+	margin: -8px auto 20px auto;
+  line-height:1.2em;
+}
+#lol-footer > .section
+{
+  position:relative;
+  width: 1016px;
+  margin: 0 auto;
+}
+
+#lol-footer
+{
+  display: block;
+	font-size: 10px;
+	font-family: Tahoma,sans-serif;
+	color: #6E6A6B;
+}
+#lol-footer a
+{
+	text-decoration: none;
+  color: #005a99;
+}
+#lol-footer a:hover
+{
+  color: #0298f6;
+}
+
+/*  FOOTER TOP - NAV  */
+#lol-footer-top
+{
+  height: 150px;
+  padding:15px;
+  margin-bottom: 10px;
+	background: transparent url(../images/lol-footer-sprite.png) no-repeat 50% 0px;
+  position:relative;
+}
+#lol-footer-nav ul
+{
+  display: block;
+  float: left;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+#lol-footer-nav ul ul
+{
+  float: none;
+}
+#lol-footer-nav > ul
+{
+	display: table;
+  width:100%;
+}
+#lol-footer-nav > ul > li
+{
+	display: table-cell;
+	position: relative;
+  padding: 25px 25px;
+	overflow: hidden;
+  text-align: left;
+  min-width: 150px;
+}
+
+#lol-footer-nav a
+{
+	text-decoration: none;
+	font-size: 13px;
+	font-family: Tahoma,sans-serif;
+  font-weight: bold;
+  line-height: 1.3em;
+}
+#lol-footer-nav ul ul
+{
+  margin-top:15px;
+}
+#lol-footer-nav > ul > li > a
+{
+  text-transform: uppercase;
+  color: #9F9F9F;
+}
+#lol-footer-nav > ul > li > a:hover
+{
+  color: #ffffff;
+}
+
+
+/*  FOOTER TOP - INFO */
+#lol-footer #lol-footer-info
+{
+  position:absolute;
+  top:15px;
+  left:0px;
+}
+  #lol-footer-info .logo-riotgamescom
+  {
+    display: block;
+    position: absolute;
+    top: 22px;
+    left: 60px;
+    width: 80px;
+    height: 60px;
+    background: transparent url(../images/lol-footer-sprite.png) -45px -812px no-repeat;
+  }
+  #lol-footer-info .logo-pvpnet
+  {
+    display: block;
+    position: absolute;
+    top: 4px;
+    left: 330px;
+    width: 250px;
+    height: 35px;
+    background: transparent url(../images/lol-footer-sprite.png) 0px -744px no-repeat;
+  }
+  #lol-footer-info .play-free-link
+  {
+    display: block;
+    position: absolute;
+    top: 22px;
+    left: 730px;
+    width: 220px;
+    height: 53px;
+    line-height: 53px;
+    padding: 15px 15px 18px 15px;
+    background: transparent url(../images/lol-footer-sprite.png) -163px -801px no-repeat;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    text-shadow: 2px 2px 2px rgb(51, 51, 51);
+    font-size: 23px;
+    letter-spacing: 2px;
+    font-family: "ITCFrizQuadrataRoman", "Times New Roman", serif;
+    color:#ECC873;
+    text-transform: uppercase;
+  }
+    #lol-footer-info .play-free-link:hover
+    {
+      background-position: -501px -801px;
+      color:#E6D7AB;
+    }
+    .i18n-fr #lol-footer-info .play-free-link
+    {
+      font-size:16px;
+    }
+    .i18n-es #lol-footer-info .play-free-link
+    {
+    }
+    .i18n-de #lol-footer-info .play-free-link
+    {
+      font-size:16px;
+    }
+    .i18n-pl #lol-footer-info .play-free-link
+    {
+      font-size:20px;
+    }
+    .i18n-ro #lol-footer-info .play-free-link
+    {
+      font-size:20px;
+    }
+  #lol-footer-info #lol-footer-copyright
+  {
+    position:absolute;
+    top:60px;
+    left:190px;
+    width:500px;
+    text-align:left;
+	font-size:12px;
+  }
+    #lol-footer-copyright p
+    {
+      margin: 0 0 10px 0;
+    }
+    #lol-footer-copyright ul.lol-menu
+    {
+      margin:15px 0 15px -8px;
+      padding:0;
+      list-style:none;
+    }
+    #lol-footer-copyright ul.lol-menu li
+    {
+      display:inline-block;
+      padding: 0 10px 0 8px;
+      border-right:1px solid #6E6A6B;
+    }
+    #lol-footer-copyright ul.lol-menu li.last
+    {
+      border-right:none;
+    }
+
+
+/*  FOOTER BOTTOM  */
+#lol-footer-bottom
+{
+	height: 98px;
+  padding: 10px 15px;
+  background: url(../images/lol-footer-sprite.png) 50% -512px no-repeat;
+  position:relative;
+}
+/*  FOOTER BOTTOM - sponsors  */
+#lol-footer-bottom #lol-footer-sponsors
+{
+  position: absolute;
+  top: 14px;
+  left: 190px;
+  width: 800px;
+	height: 75px;
+  display: table;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+#lol-footer-sponsors li
+{
+	display: table-cell;
+  vertical-align:middle;
+  text-align:center;
+}
+#lol-footer-sponsors li a
+{
+  display: inline-block;
+  width: 167px;
+  height: 75px;
+	background: transparent url(../images/lol-footer-sprite.png) no-repeat;
+}
+#lol-footer-sponsors .sponsor-alienware
+{
+  background-position: -205px -738px;
+  width: 100px;
+  height: 50px;
+}
+#lol-footer-sponsors .sponsor-razer
+{
+  background-position: -343px -742px;
+  width: 160px;
+  height: 45px;
+}
+#lol-footer-sponsors .sponsor-paysafe
+{
+  background-position: -527px -745px;
+  width: 131px;
+  height: 35px;
+}
+#lol-footer-sponsors .sponsor-amd
+{
+  background-position: -669px -740px;
+  width: 115px;
+  height: 50px;
+}
+#lol-footer-sponsors .sponsor-esrb
+{
+  background-position: -788px -713px;
+  height: 91px;
+  width: 151px;
+}
+#lol-footer-sponsors .sponsor-pegi
+{
+  background-position: -942px -728px;
+  height: 70px;
+  width: 56px;
+}
+
+
+/*  FOOTER BOTTOM - social  */
+#lol-footer-bottom ul.social-links {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 42px;
+  left: 44px;
+}
+#lol-footer-bottom ul.social-links li
+{
+  display:inline-block;
+}
+#lol-footer-bottom ul.social-links a
+{
+  display:block;
+  width: 32px;
+  height: 32px;
+  margin-right:5px;
+	background: transparent url(../images/lol-footer-sprite.png) no-repeat;
+}
+#lol-footer-bottom ul.social-links a.facebook
+{
+  background-position: -878px -809px;
+}
+#lol-footer-bottom ul.social-links a.facebook:hover
+{
+  background-position: -878px -842px;
+}
+#lol-footer-bottom ul.social-links a.twitter
+{
+  background-position: -914px -809px;
+}
+#lol-footer-bottom ul.social-links a.twitter:hover
+{
+  background-position: -914px -842px;
+}
+#lol-footer-bottom ul.social-links a.youtube
+{
+  background-position: -950px -809px;
+}
+#lol-footer-bottom ul.social-links a.youtube:hover
+{
+  background-position: -950px -842px;
+}
+
+/* Timeline Modal */
+iframe[seamless]
+{
+    background-color: transparent;
+    border: 0px none transparent;
+    padding: 0px;
+    overflow: hidden;
+}
+#TLoverlay
+{
+	z-index: 100000;
+	position:fixed;
+	top:0px;
+	left:0px;
+	width:100%;
+	height:100%;
+	background-color: rgb(20,20,20);
+	background-color: rgba(20,20,20,0.7);
+	/*-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";*/
+	text-align: center;
+	border:0;
+}
+
+#TLoverlayover
+{
+	position: relative;
+	margin: 0 auto;
+	top: 50%;
+	margin-top: -320px;
+	width: 982px;
+	height: 642px;
+	overflow: hidden;
+	/*-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";*/
+	background: #000000 url(../img/timelineloader.gif) center center no-repeat;
+	text-align: left;
+	border:0;
+}
+
+#TLoverlaycont iframe
+{
+	width: 984px\0/ !important;
+	height: 642px\0/ !important;
+}
+
+#TLoverlaycont, #TLoverlaycont iframe
+{
+	position:absolute;
+	top:0px;
+	left:0px;
+	width:100%;
+	height:100%;
+	overflow: hidden;
+	background: #000000 url(../img/timelineloader.gif) center center no-repeat;
+	border:0;
+	padding:0;
+	margin:0;
+}
+
+#TLoverlayclose
+{
+	position: absolute;
+	top: 1px;
+	right: 1px;
+	width: 20px;
+	height: 20px;
+	background: transparent url(../images/lol-header-sprite.png) -485px -203px no-repeat;
+	cursor: pointer;
+}
+#TLoverlayclose:hover
+{
+	background-position: -505px -203px;
+}
+
+/*  ie hacks to fix rendering issues in IE7  */
+#lol-header-nav>ul>li
+{
+  *display:block;
+  *float:left;
+  *width:123px;
+  *height:54px;
+  *padding:0px;
+}
+#lol-header-nav>ul>li>a
+{
+  *display:block;
+  *width:123px;
+  *height:54px;
+  *padding:0px;
+  *margin:0px;
+  *text-align:center;
+}
+#lol-footer-nav > ul > li
+{
+  *display: block;
+  *float:left;
+  *width: 190px;
+}
+#lol-footer-copyright ul.lol-menu li {
+  *display: block;
+  *float:left;
+}
+#lol-footer-bottom ul.social-links li {
+  *display: block;
+  *float:left;
+}
+#lol-footer-sponsors li,
+#lol-footer-sponsors li a {
+  *display: block;
+  *float:left;
+  *margin-right:10px;
+}
+/*  end ie hacks  */
+
+
+/* PAGINADOR */
+.pagination{display:inline-block;padding-left:0;margin:20px 0;border-radius:4px}
+.pagination>li{display:inline}
+.pagination>li>a,.pagination>li>span{color:#000;position:relative;float:left;padding:6px 12px;margin-left:-1px;line-height:1.428571429;text-decoration:none;background-color:#fff;border:1px solid #ddd}
+.pagination>li:first-child>a,.pagination>li:first-child>span{margin-left:0;border-bottom-left-radius:4px;border-top-left-radius:4px}
+.pagination>li:last-child>a,.pagination>li:last-child>span{border-top-right-radius:4px;border-bottom-right-radius:4px}
+.pagination>li>a:hover,.pagination>li>span:hover,.pagination>li>a:focus,.pagination>li>span:focus{background-color:#eee}
+.pagination>.active>a,.pagination>.active>span,.pagination>.active>a:hover,.pagination>.active>span:hover,.pagination>.active>a:focus,.pagination>.active>span:focus{z-index:2;color:#fff;cursor:default;background-color:#428bca;border-color:#428bca}
+.pagination>.disabled>span,.pagination>.disabled>span:hover,.pagination>.disabled>span:focus,.pagination>.disabled>a,.pagination>.disabled>a:hover,.pagination>.disabled>a:focus{color:#999;cursor:not-allowed;background-color:#fff;border-color:#ddd}
+
+/* Progress bars */
+
+.progress {
+    height: 20px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    background-color: #f5f5f5;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,.1);
+    box-shadow: inset 0 1px 2px rgba(0,0,0,.1);
+}
+.progress-bar {
+    float: left;
+    width: 0;
+    height: 100%;
+    font-size: 12px;
+    line-height: 20px;
+    color: #fff;
+    text-align: center;
+    background-color: #337ab7;
+    -webkit-box-shadow: inset 0 -1px 0 rgba(0,0,0,.15);
+    box-shadow: inset 0 -1px 0 rgba(0,0,0,.15);
+    -webkit-transition: width .6s ease;
+    -o-transition: width .6s ease;
+    transition: width .6s ease;
+}
+.progress-bar-striped, .progress-striped .progress-bar {
+    background-image: -webkit-linear-gradient(45deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent);
+    background-image: -o-linear-gradient(45deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent);
+    background-image: linear-gradient(45deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent);
+    -webkit-background-size: 40px 40px;
+    background-size: 40px 40px;
+}
+.progress-bar-success {
+    background-color: #5cb85c;
+}
+.progress-bar-info {
+    background-color: #5bc0de;
+}
+.progress-bar-warning {
+    background-color: #f0ad4e;
+}
+.progress-bar-danger {
+    background-color: #d9534f;
+}
+.gslist>p {
+    margin-bottom: 0px;
+    font-size: 14px;
+}

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<nav_master>
+<nav_cat title="Premium Modules" group="22" icon="fa-plus-square">
+<nav_option link="index.php?get=vote_credits_manager" group="22">Vote for Credits Manager</nav_option>
+</nav_cat>
+</nav_master>

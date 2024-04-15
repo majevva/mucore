@@ -1,0 +1,48 @@
+@import url(http://fonts.googleapis.com/css?family=PT+Sans:400,700);
+#cssmenu {
+  background: url(../images/tpl/navbar_background.jpg) repeat-x top center;
+  width: 100%;
+  padding: 0;
+  line-height: 1;
+  display: block;
+	margin: auto;
+	position: relative;
+}
+#cssmenu ul {
+  list-style: none;
+
+    text-align: center;
+    height: 42px;
+    margin: 0px;
+}
+#cssmenu ul:after {
+  content: ' ';
+  display: block;
+  font-size: 0;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+#cssmenu ul li {
+      list-style-type: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 0px 15px;
+    padding-top: 14px;
+    height: 33px;
+  
+}
+#cssmenu ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+#cssmenu ul li a:hover {
+  color: #0ef9fb;
+    text-decoration: none;
+    text-shadow: 0 0 3px #0ef9fb;
+}
+#cssmenu ul li ul {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+}

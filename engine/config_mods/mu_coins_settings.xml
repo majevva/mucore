@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<chat>
+<active>1</active>
+
+<buy_url></buy_url>
+<credits_database>1</credits_database>
+<credits2_database>1</credits2_database>
+
+<credits_table>MUCore_AOHCreditos</credits_table>
+<credits2_table>MUCore_AOHCreditos</credits2_table>
+
+<credits_column>credits</credits_column>
+<credits2_column>credits2</credits2_column>
+
+<user_column>memb___id</user_column>
+<user2_column>memb___id</user2_column>
+
+<money_name1>Creditos</money_name1>
+<money_name2>Cash</money_name2>
+</chat>	

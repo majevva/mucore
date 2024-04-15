@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<nav_master>
+
+
+ <nav_cat title="Premium Moduless" group="22" icon="fa-plus-square">
+  <nav_option link="index.php?get=usercp_reset_character_vip_settings" group="22">Reset Character Settings VIP</nav_option>
+ </nav_cat>
+</nav_master>

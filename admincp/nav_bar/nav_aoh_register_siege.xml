@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<nav_master>
+ <nav_cat title="AOH Modulos" group="12" icon="fa-flash">
+  <nav_option link="index.php?get=aoh_register_siege" group="12" opt="ADM">Registrar al CS</nav_option>
+ </nav_cat>
+</nav_master>

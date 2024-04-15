@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<nav_master>
+
+<nav_cat title="MUCore SEO" group="10" icon="fa-language">
+<nav_option link="index.php?get=vip_manager" group="10">Hacer Usuarios VIP</nav_option>
+<nav_option link="index.php?get=seo_head_tags" group="10">Head Tags</nav_option>
+<nav_option link="index.php?get=seo_stimemaps" group="10">Sitemap</nav_option>
+ </nav_cat>
+ 
+ <nav_cat title="MUCore Options" group="11" icon="fa-gears">
+  <nav_option link="index.php?get=website_settings" group="11">Website Settings</nav_option>
+  <nav_option link="index.php?get=template_settings" group="11">Template Setting</nav_option>
+  <nav_option link="index.php?get=gameservers_manager" group="11" opt="NEW">GameServers Manager</nav_option>
+  <nav_option link="index.php?get=smtp_settings" group="11">SMTP Settings</nav_option>
+  <nav_option link="index.php?get=filter_ip" group="11">IP Filter</nav_option>
+  <nav_option link="index.php?get=cron_jobs" group="11">Cron Jobs</nav_option>
+  <nav_option link="index.php?get=gm_manager_rango" group="11" opt="NEW">GM Rango Manager</nav_option>
+  <nav_option link="index.php?get=gm_manager" group="11" opt="NEW">GM User Manager</nav_option>
+  <nav_option link="index.php?get=gm_panel" group="11">GM Control Panel Access</nav_option>
+  <nav_option link="index.php?get=mucore_backup" group="11">MUCore DB Backup</nav_option>
+  <nav_option link="index.php?get=human_verification" group="11">Human Verification Manager</nav_option>
+ </nav_cat>
+ 
+
+ 
+  <nav_cat title="Logs" group="13" icon="fa-sticky-note-o">
+   <nav_option link="index.php?get=logs_gm_access" group="13">GM Access Logs</nav_option>
+   <nav_option link="index.php?get=logs_gm_credits_manager" group="13">GM MU Coins Manager Logs</nav_option>
+   <nav_option link="index.php?get=logs_paypal_donate" group="13">PayPal Donate System Logs</nav_option>
+ </nav_cat>
+ 
+  <nav_cat title="Donate System" group="14" icon="fa-credit-card">
+  <nav_option link="index.php?get=donate_paypal_settings" group="14">PayPal Donate Settings</nav_option>
+  <nav_option link="index.php?get=doante_paypal_manager" group="14">PayPal Donate Manager</nav_option>
+  <nav_option link="index.php?get=donate_bancos_manager" group="14" opt="NEW">Lista de Bancos</nav_option>
+  <nav_option link="index.php?get=donate_bancos_manager_montos" group="14" opt="NEW">Lista de Bancos - Precios</nav_option>
+  <nav_option link="index.php?get=doante_paypal_transactions" group="14">PayPal Donate Transactions</nav_option>
+ </nav_cat>
+ 
+  <nav_cat title="Characters And Accounts" group="15" icon="fa-users">
+   <nav_option link="index.php?get=users_activate" group="15">Users Awaiting Activation</nav_option>
+   <nav_option link="index.php?get=edit_character" group="15">Search Character</nav_option>
+   <nav_option link="index.php?get=edit_account" group="15">Search Account</nav_option>
+   <nav_option link="index.php?get=search_account_ip" group="15">Search Account Using IP</nav_option>
+   <nav_option link="index.php?get=search_ip_account" group="15">Search IP Using Account</nav_option>
+   <nav_option link="index.php?get=ban_manager" group="15">Ban Manager</nav_option>
+  </nav_cat>
+ 
+  <nav_cat title="MU Coins" group="16" icon="fa-star">
+  <nav_option link="index.php?get=mucoins_config" group="16">MU Coins Config</nav_option>
+   <nav_option link="index.php?get=mucoins_manager" group="16">MU Coins Manager</nav_option>
+   <nav_option link="index.php?get=mucoins_add" group="16">Add MU Coins</nav_option>
+  </nav_cat>
+  
+   
+  <nav_cat title="Anuncios y Noticias" group="17" icon="fa-newspaper-o">
+   <nav_option link="index.php?get=news_manager" group="17">Agregar Noticias</nav_option>
+   <nav_option link="index.php?get=announcements_manager" group="17">Agregar Anuncios</nav_option>
+   <nav_option link="index.php?get=news_settings" group="17">Configurar Noticias</nav_option>
+   <nav_option link="index.php?get=announcements_settings" group="17">Configurar Anuncios</nav_option>
+  </nav_cat>
+  
+  
+  
+ <nav_cat title="MUCore CMS" group="18" icon="fa-dashboard">
+  <nav_option link="index.php?get=cms_global_options" group="18">Global Options</nav_option>
+  <nav_option link="index.php?get=cms_style_options" group="18">Style Options</nav_option>
+  <nav_option link="index.php?get=add_page" group="18">Add Page</nav_option>
+  <nav_option link="index.php?get=edit_pages" group="18">Edit Pages</nav_option>
+  <nav_option link="index.php?get=add_module" group="18">Add Module</nav_option>
+  <nav_option link="index.php?get=edit_modules" group="18">Edit Modules </nav_option>  
+  <nav_option link="index.php?get=add_module_user" group="18">Add Module [User CP Page]</nav_option>  
+  <nav_option link="index.php?get=edit_modules_user" group="18">Edit Modules [User CP Page]</nav_option>  
+ </nav_cat>
+
+
+
+
+  
+ <nav_cat title="Modules" group="19" icon="fa-check-square">
+ </nav_cat>
+ 
+ <nav_cat title="Modules [User CP Page]" group="20" icon="fa-dot-circle-o">
+ </nav_cat> 
+ 
+ <nav_cat title="Premium Modules" group="22" icon="fa-plus-square">
+ </nav_cat> 
+</nav_master>
+

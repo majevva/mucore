@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<castle_settings>
+<active>1</active>
+<Dinero>325,200,000</Dinero>
+<Maquina>0</Maquina>
+<Tiendas>0</Tiendas>
+<Impuesto>300,000</Impuesto>
+<periodo_01_dia>Lunes</periodo_01_dia>
+<periodo_01_hora>00:00</periodo_01_hora>
+<periodo_02_dia>Martes</periodo_02_dia>
+<periodo_02_hora>23:59</periodo_02_hora>
+<periodo_03_dia>Miercoles</periodo_03_dia>
+<periodo_03_hora>00:00</periodo_03_hora>
+<periodo_04_dia>Jueves</periodo_04_dia>
+<periodo_04_hora>00:00</periodo_04_hora>
+<periodo_05_dia>Viernes</periodo_05_dia>
+<periodo_05_hora>12:00</periodo_05_hora>
+<periodo_06_dia>Sabado</periodo_06_dia>
+<periodo_06_hora>19:00</periodo_06_hora>
+<periodo_07_dia>Domingo</periodo_07_dia>
+<periodo_07_hora>22:00</periodo_07_hora>
+<periodo_08_dia>Domingo</periodo_08_dia>
+<periodo_08_hora>00:00</periodo_08_hora>
+</castle_settings>

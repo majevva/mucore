@@ -1,0 +1,19 @@
+/* 
+    Document   : df_admin_panel
+    Created on : 15/08/2012, 07:40:10 PM
+    Author     : David
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+
+/*****************************************/
+/* Login (Zona De Identificacion)        */
+/*****************************************/
+#caja_login { margin: 0 auto; width: 300px; height: 360px; padding: 70px 10px 0px 10px; font-size: 12px; vertical-align: middle; background: #6a0000;}
+#caja_login_contenido { margin: 0 auto; width: 220px; height: 320px; padding: 10px; background: white;}
+#identificacion_login {padding: 10px 0 10px 0;}
+.login_padding { padding: 3px; width: auto; height: 20px;}
+.LoginInput { width: 148px; height: 18px; vertical-align: middle; margin: 0px; padding: 0px;}
+#enviar { color:#014D5F; width: 80px; height: 22px; vertical-align: middle; margin: 5px 0px; text-align: center; padding-bottom: 6px;}
+#creditos_login { padding-top: 10px; margin: 0 auto; vertical-align: middle; font-size: 12px; width: auto;}

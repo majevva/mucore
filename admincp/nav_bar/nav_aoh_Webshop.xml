@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<nav_master>
+ <nav_cat title="WebShop AOH" group="21" icon="fa-shopping-cart">
+  <nav_option link="index.php?get=aoh_Webshop" group="21">Configuracion</nav_option>
+  <nav_option link="index.php?get=webshop_item_manager" group="21">Items Manager</nav_option>
+  <nav_option link="index.php?get=webshop_logs" group="21">Logs</nav_option>
+  <nav_option link="index.php?get=webshop_export" group="21">Export Items</nav_option>
+ </nav_cat>
+</nav_master>

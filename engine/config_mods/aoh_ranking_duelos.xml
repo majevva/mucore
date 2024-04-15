@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<rankings>
+<active>1</active>
+<numero_top>15</numero_top>
+<tabla>DUEL_INFO</tabla>
+<columna_pj>Name</columna_pj>
+<columna_win>Win</columna_win>
+<columna_Lose>Lost</columna_Lose>
+</rankings>

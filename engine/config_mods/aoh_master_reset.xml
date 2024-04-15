@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<reset_settings>
+<active>1</active>
+<master_level>300</master_level>
+<master_points>200</master_points>
+<master_clear_skills>0</master_clear_skills>
+<master_table>Character</master_table>
+<master_colum_Level>SCFMasterLevel</master_colum_Level>
+<master_colum_Points>SCFMasterPoints</master_colum_Points>
+<master_colum_Skills>SCFMasterSkills</master_colum_Skills>
+</reset_settings>

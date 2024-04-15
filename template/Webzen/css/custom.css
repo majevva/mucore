@@ -1,0 +1,40 @@
+.tbtl{
+  background: #f2f2f2;
+  font-weight: bold;
+}
+.table-aoh {
+  font-size: 0.9em;
+  text-align: center;
+  color: #000;
+}
+.table-fix {
+  color: #000 !important;
+}
+.panel-fix {
+  color: #000 !important;
+}
+.panel-fix table{
+
+  color: #000 !important;
+}
+.lbl-fix {
+  font-size: 10px;
+}
+.tbl-rank td {
+  padding: 6px;
+}
+.rank_n {
+  vertical-align: middle !important;
+  font-size: 17px;
+  font-weight: bold;
+}
+.usercp_module {
+margin-bottom: 10px;
+}
+.usercp_module {
+  width: initial;
+    max-width: 250px;
+}
+.panel-body-cont{
+  
+}

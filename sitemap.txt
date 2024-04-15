@@ -1,0 +1,12 @@
+http://localhost:4478/MUCORE/
+http://localhost:4478/MUCORE/index.php?page_id=news
+http://localhost:4478/MUCORE/index.php?page_id=register
+http://localhost:4478/MUCORE/index.php?page_id=aoh_ranking_duelos
+http://localhost:4478/MUCORE/index.php?page_id=aoh_ranking_resetglobal
+http://localhost:4478/MUCORE/index.php?page_id=descarga
+http://localhost:4478/MUCORE/index.php?page_id=rankings
+http://localhost:4478/MUCORE/index.php?page_id=top_asesinos
+http://localhost:4478/MUCORE/index.php?page_id=donar
+http://localhost:4478/MUCORE/index.php?page_id=castle_siegephp
+http://localhost:4478/MUCORE/index.php?page_id=infophp
+http://localhost:4478/MUCORE/index.php?page_id=aoh_hora_eventos
