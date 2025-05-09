@@ -1,0 +1,730 @@
+   <table width=100% border="0" cellpadding="0" cellspacing="0" style='text-align:center; font-size:12px; margin:auto; color:white;user-select: none;'>
+        <tbody>
+            <tr><td>&nbsp;</td><td><span style='color:white;'>&nbsp;</span></td>{% for n in range(19) %}<td>&nbsp;</td>{% endfor%}
+                {% for x in range (9-buffer1|length)%}<td class='cart_buffer_clear'>&nbsp;</td>{% endfor%}
+                {% for x in buffer1 %}
+                {% if x[0] in cart %} <td class='cart_found' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% else %}<td class='cart_buffer' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% endif %}{% if x[0] in cmw %} <span class ='cmw'> {{x[0]}} </span> {% else %} {{x[0]}} {% endif %}</td>
+                {% endfor%}
+            <td class='buffer_name_green'>BHL-RETURNS-01</td><td><span class='buffer_fifo'>{% if 'buffer1' in buffers_fifo %}{{buffers_fifo.index('buffer1')+1}}{% else %}&nbsp;{% endif %}</span></td></tr>
+            <tr><td>&nbsp;</td><td>CART NO</td><td class='timeout_headers'>DAYS</td><td>HOURS</td><td>MINUTES</td><td>STATION</td>
+                {% if nocleared | length > 0 %}{% for n in range(6) %}<td></td>{% endfor%}<td colspan='8' rowspan='2' class='message'>Check carts <b>{{nocleared[0][0]}}</b> and <b>{{nocleared[1][0]}}</b> on {{nocleared[0][1]}}</td>{% for n in range(1) %}<td></td>{% endfor%}{% else %}{% for n in range(15) %}<td></td>{% endfor%}{% endif%}
+                {% for x in range (9-buffer2|length)%}<td class='cart_buffer_clear'>&nbsp;</td>{% endfor%}
+                {% for x in buffer2 %}
+                {% if x[0] in cart %} <td class='cart_found' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% else %}<td class='cart_buffer' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% endif %}{% if x[0] in cmw %} <span class ='cmw'> {{x[0]}} </span> {% else %} {{x[0]}} {% endif %}</td>
+                {% endfor%}
+                <td class='buffer_name_green'>BHL-RETURNS-02</td><td><span class='buffer_fifo'>{% if 'buffer2' in buffers_fifo %}{{buffers_fifo.index('buffer2')+1}}{% else %}&nbsp;{% endif %}</span></td></tr>
+            <tr>{% if nocleared | length > 0 %} {% for n in range(13) %}<td>&nbsp;</td>{% endfor%} {% else %} {% for n in range(21) %}<td></td>{% endfor%} {% endif%}
+                {% for x in range (9-buffer3|length)%}<td class='cart_buffer_clear'>&nbsp;</td>{% endfor%}
+                {% for x in buffer3 %}
+                {% if x[0] in cart %} <td class='cart_found' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% else %}<td class='cart_buffer' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% endif %}{% if x[0] in cmw %} <span class ='cmw'> {{x[0]}} </span> {% else %} {{x[0]}} {% endif %}</td>
+                {% endfor%}
+                {% if 'buffer3' in buffers_fifo and buffers_fifo.index('buffer3')+1 == 1 %}<td class='buffer_name_highprio'>{%else%}<td class='buffer_name'>{%endif%}B-RETURNS-01</td><td><span class='buffer_fifo'>{% if 'buffer3' in buffers_fifo %}{{buffers_fifo.index('buffer3')+1}}{% else %}&nbsp;{% endif %}</span></td></tr>
+            <tr><td>&nbsp;</td>{% if timeout_carts_by_station[0][0] in ''%}<td rowspan='2'>{%else%}<td rowspan='2' class="fifo_carts_one">{%endif%}{{timeout_carts_by_station[0][0]}}</td>{% if timeout_carts_by_station[0][0] in ''%}<td rowspan='2'>{%else%}<td rowspan='2' class="fifo_carts_one">{%endif%}{{timeout_carts_by_station[0][1]}}</td>{% if timeout_carts_by_station[0][0] in ''%}<td rowspan='2'>{%else%}<td rowspan='2' class="fifo_carts_one">{%endif%}{{timeout_carts_by_station[0][2]}}</td>{% if timeout_carts_by_station[0][0] in ''%}<td rowspan='2'>{%else%}<td rowspan='2' class="fifo_carts_one">{%endif%}{{timeout_carts_by_station[0][3]}}</td>{% if timeout_carts_by_station[0][0] in ''%}<td rowspan='2'>{%else%}<td rowspan='2' class="fifo_carts_one">{%endif%}{{timeout_carts_by_station[0][4]}}</td>{% for n in range(15) %}<td>&nbsp;</td>{% endfor%}
+                {% for x in range (9-buffer4|length)%}<td class='cart_buffer_clear'>&nbsp;</td>{% endfor%}
+                {% for x in buffer4 %}
+                {% if x[0] in cart %} <td class='cart_found' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% else %}<td class='cart_buffer' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% endif %}{% if x[0] in cmw %} <span class ='cmw'> {{x[0]}} </span> {% else %} {{x[0]}} {% endif %}</td>
+                {% endfor%}
+                {% if 'buffer4' in buffers_fifo and buffers_fifo.index('buffer4')+1 == 1 %}<td class='buffer_name_highprio'>{%else%}<td class='buffer_name'>{%endif%}B-RETURNS-02</td><td><span class='buffer_fifo'>{% if 'buffer4' in buffers_fifo %}{{buffers_fifo.index('buffer4')+1}}{% else %}&nbsp;{% endif %}</span></td></tr>
+            <tr>{% for n in range(16) %}<td>&nbsp;</td>{% endfor%}
+                {% for x in range (9-buffer5|length)%}<td class='cart_buffer_clear'>&nbsp;</td>{% endfor%}
+                {% for x in buffer5 %}
+                {% if x[0] in cart %} <td class='cart_found' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% else %}<td class='cart_buffer' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% endif %}{% if x[0] in cmw %} <span class ='cmw'> {{x[0]}} </span> {% else %} {{x[0]}} {% endif %}</td>
+                {% endfor%}
+                {% if 'buffer5' in buffers_fifo and buffers_fifo.index('buffer5')+1 == 1 %}<td class='buffer_name_highprio'>{%else%}<td class='buffer_name'>{%endif%}B-RETURNS-03</td><td><span class='buffer_fifo'>{% if 'buffer5' in buffers_fifo %}{{buffers_fifo.index('buffer5')+1}}{% else %}&nbsp;{% endif %}</span></td></tr>
+            <tr><td>&nbsp;</td>{% if timeout_carts_by_station[1][0] in ''%}<td rowspan='2'>{%else%}<td rowspan='2' class="fifo_carts">{%endif%}{{timeout_carts_by_station[1][0]}}</td>{% if timeout_carts_by_station[1][0] in ''%}<td rowspan='2'>{%else%}<td rowspan='2' class="fifo_carts">{%endif%}{{timeout_carts_by_station[1][1]}}</td>{% if timeout_carts_by_station[1][0] in ''%}<td rowspan='2'>{%else%}<td rowspan='2' class="fifo_carts">{%endif%}{{timeout_carts_by_station[1][2]}}</td>{% if timeout_carts_by_station[1][0] in ''%}<td rowspan='2'>{%else%}<td rowspan='2' class="fifo_carts">{%endif%}{{timeout_carts_by_station[1][3]}}</td>{% if timeout_carts_by_station[1][0] in ''%}<td rowspan='2'>{%else%}<td rowspan='2' class="fifo_carts">{%endif%}{{timeout_carts_by_station[1][4]}}</td>{% for n in range(6) %}<td>&nbsp;</td>{% endfor%}
+                {% if 'H-12' in acts %}<td class='station_active'>{% else %}<td class='station_name'>{% endif %}H-12</td>
+                {% if 'H-11' in acts %}<td class='station_active'>{% else %}<td class='station_name'>{% endif %}H-11</td>
+                <td>&nbsp;</td>
+                {% if 'H-10' in acts %}<td class='station_active'>{% else %}<td class='station_name'>{% endif %}H-10</td>
+                {% if 'H-09' in acts %}<td class='station_active'>{% else %}<td class='station_name'>{% endif %}H-09</td>
+                <td>&nbsp;</td>
+                {% if 'H-08' in acts %}<td class='station_active'>{% else %}<td class='station_name'>{% endif %}H-08</td>
+                {% if 'H-07' in acts %}<td class='station_active'>{% else %}<td class='station_name'>{% endif %}H-07</td>
+                <td>&nbsp;</td>
+                {% for x in range (9-buffer6|length)%}<td class='cart_buffer_clear'>&nbsp;</td>{% endfor%}
+                {% for x in buffer6 %}
+                {% if x[0] in cart %} <td class='cart_found' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% else %}<td class='cart_buffer' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% endif %}{% if x[0] in cmw %} <span class ='cmw'> {{x[0]}} </span> {% else %} {{x[0]}} {% endif %}</td></a>
+                {% endfor%}
+                {% if 'buffer6' in buffers_fifo and buffers_fifo.index('buffer6')+1 == 1 %}<td class='buffer_name_highprio'>{%else%}<td class='buffer_name'>{%endif%}B-RETURNS-04</td><td><span class='buffer_fifo'>{% if 'buffer6' in buffers_fifo %}{{buffers_fifo.index('buffer6')+1}}{% else %}&nbsp;{% endif %}</span></td>
+            </tr>
+            <tr>{% for n in range(7) %}<td>&nbsp;</td>{% endfor%}
+                {% if H12[0][0] in cart %} <td class='cart_found' onclick="scd_allocated({{H12[0][0]}},'{{H12[0][1]}}','{{H12[0][2]}}','{{H12[0][3]}}')">{% else %}<td class='cart' onclick="scd_allocated({{H12[0][0]}},'{{H12[0][1]}}','{{H12[0][2]}}','{{H12[0][3]}}')">{% endif %} {%if '1' in H12[0][4]%} <span class='blink2_mode'>{{H12[0][0]}}</span> {%elif '2' in H12[0][4]%}<span class='blink3_mode'>{{H12[0][0]}}</span> {%else%}{{H12[0][0]}} {%endif%}</td>
+                 {% if H11[0][0] in cart %} <td class='cart_found' onclick="scd_allocated({{H11[0][0]}},'{{H11[0][1]}}','{{H11[0][2]}}','{{H11[0][3]}}')">{% else %}<td class='cart' onclick="scd_allocated({{H11[0][0]}},'{{H11[0][1]}}','{{H11[0][2]}}','{{H11[0][3]}}')">{% endif %} {%if '1' in H11[0][4]%} <span class='blink2_mode'>{{H11[0][0]}}</span> {%elif '2' in E26[0][4]%}<span class='blink3_mode'>{{E26[0][0]}}</span> {%else%}{{E26[0][0]}} {%endif%}</td>
+  <td>&nbsp;</td>
+                {% if H10[0][0] in cart %} <td class='cart_found' onclick="scd_allocated({{H10[0][0]}},'{{H10[0][1]}}','{{H10[0][2]}}','{{H10[0][3]}}')">{% else %}<td class='cart' onclick="scd_allocated({{H10[0][0]}},'{{H10[0][1]}}','{{H10[0][2]}}','{{H10[0][3]}}')">{% endif %} {%if '1' in H10[0][4]%} <span class='blink2_mode'>{{H10[0][0]}}</span> {%elif '2' in H10[0][4]%}<span class='blink3_mode'>{{H10[0][0]}}</span> {%else%}{{H10[0][0]}} {%endif%}</td>
+                {% if H9[0][0] in cart %} <td class='cart_found' onclick="scd_allocated({{H9[0][0]}},'{{H9[0][1]}}','{{H9[0][2]}}','{{H9[0][3]}}')">{% else %}<td class='cart' onclick="scd_allocated({{H9[0][0]}},'{{H9[0][1]}}','{{H9[0][2]}}','{{H9[0][3]}}')">{% endif %} {%if '1' in H9[0][4]%} <span class='blink2_mode'>{{H9[0][0]}}</span> {%elif '2' in H9[0][4]%}<span class='blink3_mode'>{{H9[0][0]}}</span> {%else%}{{H9[0][0]}} {%endif%}</td>
+                <td>&nbsp;</td>
+                {% if H8[0][0] in cart %} <td class='cart_found' onclick="scd_allocated({{H8[0][0]}},'{{H8[0][1]}}','{{H8[0][2]}}','{{H8[0][3]}}')">{% else %}<td class='cart' onclick="scd_allocated({{H8[0][0]}},'{{H8[0][1]}}','{{H8[0][2]}}','{{H8[0][3]}}')">{% endif %} {%if '1' in H8[0][4]%} <span class='blink2_mode'>{{H8[0][0]}}</span> {%elif '2' in H8[0][4]%}<span class='blink3_mode'>{{H8[0][0]}}</span> {%else%}{{H8[0][0]}} {%endif%}</td>
+                {% if H7[0][0] in cart %} <td class='cart_found' onclick="scd_allocated({{H7[0][0]}},'{{H7[0][1]}}','{{H7[0][2]}}','{{H7[0][3]}}')">{% else %}<td class='cart' onclick="scd_allocated({{H7[0][0]}},'{{H7[0][1]}}','{{H7[0][2]}}','{{H7[0][3]}}')">{% endif %} {%if '1' in H7[0][4]%} <span class='blink2_mode'>{{H7[0][0]}}</span> {%elif '2' in H7[0][4]%}<span class='blink3_mode'>{{H7[0][0]}}</span> {%else%}{{H7[0][0]}} {%endif%}</td>
+                <td>&nbsp;</td>
+                {% for x in range (9-buffer7|length)%}<td class='cart_buffer_clear'>&nbsp;</td>{% endfor%}
+                {% for x in buffer7 %}
+                {% if x[0] in cart %} <td class='cart_found' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% else %}<td class='cart_buffer' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% endif %}{% if x[0] in cmw %} <span class ='cmw'> {{x[0]}} </span> {% else %} {{x[0]}} {% endif %}</td>
+                {% endfor%}
+                {% if 'buffer7' in buffers_fifo and buffers_fifo.index('buffer7')+1 == 1 %}<td class='buffer_name_highprio'>{%else%}<td class='buffer_name'>{%endif%}B-RETURNS-05</td><td><span class='buffer_fifo'>{% if 'buffer7' in buffers_fifo %}{{buffers_fifo.index('buffer7')+1}}{% else %}&nbsp;{% endif %}</span></td>
+            </tr>
+            <tr><td>&nbsp;</td>{% if timeout_carts_by_station[2][0] in ''%}<td rowspan='2'>{%else%}<td rowspan='2' class="fifo_carts">{%endif%}{{timeout_carts_by_station[2][0]}}</td>{% if timeout_carts_by_station[2][0] in ''%}<td rowspan='2'>{%else%}<td rowspan='2' class="fifo_carts">{%endif%}{{timeout_carts_by_station[2][1]}}</td>{% if timeout_carts_by_station[2][0] in ''%}<td rowspan='2'>{%else%}<td rowspan='2' class="fifo_carts">{%endif%}{{timeout_carts_by_station[2][2]}}</td>{% if timeout_carts_by_station[2][0] in ''%}<td rowspan='2'>{%else%}<td rowspan='2' class="fifo_carts">{%endif%}{{timeout_carts_by_station[2][3]}}</td>{% if timeout_carts_by_station[2][0] in ''%}<td rowspan='2'>{%else%}<td rowspan='2' class="fifo_carts">{%endif%}{{timeout_carts_by_station[2][4]}}</td>{% for n in range(6) %}<td>&nbsp;</td>{% endfor%}
+                {% if 'H-06' in acts %}<td class='station_active'>{% else %}<td class='station_name'>{% endif %}H-06</td>
+                {% if 'H-05' in acts %}<td class='station_active'>{% else %}<td class='station_name'>{% endif %}H-05</td>
+                <td>&nbsp;</td>
+                {% if 'H-04' in acts %}<td class='station_active'>{% else %}<td class='station_name'>{% endif %}H-04</td>
+                {% if 'H-03' in acts %}<td class='station_active'>{% else %}<td class='station_name'>{% endif %}H-03</td>
+                <td>&nbsp;</td>
+                {% if 'H-02' in acts %}<td class='station_active'>{% else %}<td class='station_name'>{% endif %}H-02</td>
+                {% if 'H-01' in acts %}<td class='station_active'>{% else %}<td class='station_name'>{% endif %}H-01</td>
+                <td>&nbsp;</td>
+                {% for x in range (9-buffer8|length)%}<td class='cart_buffer_clear'>&nbsp;</td>{% endfor%}
+                {% for x in buffer8 %}
+                {% if x[0] in cart %} <td class='cart_found' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% else %}<td class='cart_buffer' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% endif %}{% if x[0] in cmw %} <span class ='cmw'> {{x[0]}} </span> {% else %} {{x[0]}} {% endif %}</td>
+                {% endfor%}
+                {% if 'buffer8' in buffers_fifo and buffers_fifo.index('buffer8')+1 == 1 %}<td class='buffer_name_highprio'>{%else%}<td class='buffer_name'>{%endif%}B-RETURNS-06</td><td><span class='buffer_fifo'>{% if 'buffer8' in buffers_fifo %}{{buffers_fifo.index('buffer8')+1}}{% else %}&nbsp;{% endif %}</span></td>
+            </tr>
+            <tr>{% for n in range(7) %}<td>&nbsp;</td>{% endfor%}
+                {% if H6[0][0] in cart %} <td class='cart_found' onclick="scd_allocated({{H6[0][0]}},'{{H6[0][1]}}','{{H6[0][2]}}','{{H6[0][3]}}')">{% else %}<td class='cart' onclick="scd_allocated({{H6[0][0]}},'{{H6[0][1]}}','{{H6[0][2]}}','{{H6[0][3]}}')">{% endif %}{%if '1' in H6[0][4]%} <span class='blink2_mode'>{{H6[0][0]}}</span> {%elif '2' in H6[0][4]%}<span class='blink3_mode'>{{H6[0][0]}}</span> {%else%}{{H6[0][0]}} {%endif%}</td>
+                {% if H5[0][0] in cart %} <td class='cart_found' onclick="scd_allocated({{H5[0][0]}},'{{H5[0][1]}}','{{H5[0][2]}}','{{H5[0][3]}}')">{% else %}<td class='cart' onclick="scd_allocated({{H5[0][0]}},'{{H5[0][1]}}','{{H5[0][2]}}','{{H5[0][3]}}')">{% endif %}{%if '1' in H5[0][4]%} <span class='blink2_mode'>{{H5[0][0]}}</span> {%elif '2' in H5[0][4]%}<span class='blink3_mode'>{{H5[0][0]}}</span> {%else%}{{H5[0][0]}} {%endif%}</td>
+                <td>&nbsp;</td>
+                {% if H4[0][0] in cart %} <td class='cart_found' onclick="scd_allocated({{H4[0][0]}},'{{H4[0][1]}}','{{H4[0][2]}}','{{H4[0][3]}}')">{% else %}<td class='cart' onclick="scd_allocated({{H4[0][0]}},'{{H4[0][1]}}','{{H4[0][2]}}','{{H4[0][3]}}')">{% endif %}{%if '1' in H4[0][4]%} <span class='blink2_mode'>{{H4[0][0]}}</span> {%elif '2' in H4[0][4]%}<span class='blink3_mode'>{{H4[0][0]}}</span> {%else%}{{H4[0][0]}} {%endif%}</td>
+                {% if H3[0][0] in cart %} <td class='cart_found' onclick="scd_allocated({{H3[0][0]}},'{{H3[0][1]}}','{{H3[0][2]}}','{{H3[0][3]}}')">{% else %}<td class='cart' onclick="scd_allocated({{H3[0][0]}},'{{H3[0][1]}}','{{H3[0][2]}}','{{H3[0][3]}}')">{% endif %}{%if '1' in H3[0][4]%} <span class='blink2_mode'>{{H3[0][0]}}</span> {%elif '2' in H3[0][4]%}<span class='blink3_mode'>{{H3[0][0]}}</span> {%else%}{{H3[0][0]}} {%endif%}</td>
+                <td>&nbsp;</td>
+                {% if H2[0][0] in cart %} <td class='cart_found' onclick="scd_allocated({{H2[0][0]}},'{{H2[0][1]}}','{{H2[0][2]}}','{{H2[0][3]}}')">{% else %}<td class='cart' onclick="scd_allocated({{H2[0][0]}},'{{H2[0][1]}}','{{H2[0][2]}}','{{H2[0][3]}}')">{% endif %}{%if '1' in H2[0][4]%} <span class='blink2_mode'>{{H2[0][0]}}</span> {%elif '2' in H2[0][4]%}<span class='blink3_mode'>{{H2[0][0]}}</span> {%else%}{{H2[0][0]}} {%endif%}</td>
+                {% if H1[0][0] in cart %} <td class='cart_found' onclick="scd_allocated({{H1[0][0]}},'{{H1[0][1]}}','{{H1[0][2]}}','{{H1[0][3]}}')">{% else %}<td class='cart' onclick="scd_allocated({{H1[0][0]}},'{{H1[0][1]}}','{{H1[0][2]}}','{{H1[0][3]}}')">{% endif %}{%if '1' in H1[0][4]%} <span class='blink2_mode'>{{H1[0][0]}}</span> {%elif '2' in H1[0][4]%}<span class='blink3_mode'>{{H1[0][0]}}</span> {%else%}{{H1[0][0]}} {%endif%}</td>
+                <td>&nbsp;</td>
+                {% for x in range (9-buffer9|length)%}<td class='cart_buffer_clear'>&nbsp;</td>{% endfor%}
+                {% for x in buffer9 %}
+                {% if x[0] in cart %} <td class='cart_found' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% else %}<td class='cart_buffer' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% endif %}{% if x[0] in cmw %} <span class ='cmw'> {{x[0]}} </span> {% else %} {{x[0]}} {% endif %}</td>
+                {% endfor%}
+                {% if 'buffer9' in buffers_fifo and buffers_fifo.index('buffer9')+1 == 1 %}<td class='buffer_name_highprio'>{%else%}<td class='buffer_name'>{%endif%}B-RETURNS-07</td><td><span class='buffer_fifo'>{% if 'buffer9' in buffers_fifo %}{{buffers_fifo.index('buffer9')+1}}{% else %}&nbsp;{% endif %}</span></td>
+            </tr>
+            <tr><td>&nbsp;</td>{% if timeout_carts_by_station[3][0] in ''%}<td rowspan='2'>{%else%}<td rowspan='2' class="fifo_carts">{%endif%}{{timeout_carts_by_station[3][0]}}</td>{% if timeout_carts_by_station[3][0] in ''%}<td rowspan='2'>{%else%}<td rowspan='2' class="fifo_carts">{%endif%}{{timeout_carts_by_station[3][1]}}</td>{% if timeout_carts_by_station[3][0] in ''%}<td rowspan='2'>{%else%}<td rowspan='2' class="fifo_carts">{%endif%}{{timeout_carts_by_station[3][2]}}</td>{% if timeout_carts_by_station[3][0] in ''%}<td rowspan='2'>{%else%}<td rowspan='2' class="fifo_carts">{%endif%}{{timeout_carts_by_station[3][3]}}</td>{% if timeout_carts_by_station[3][0] in ''%}<td rowspan='2'>{%else%}<td rowspan='2' class="fifo_carts">{%endif%}{{timeout_carts_by_station[3][4]}}</td>{% for n in range(6) %}<td>&nbsp;</td>{% endfor%}
+                {% if 'G-12' in acts %}<td class='station_active'>{% else %}<td class='station_name'>{% endif %}G-12</td>
+                {% if 'G-11' in acts %}<td class='station_active'>{% else %}<td class='station_name'>{% endif %}G-11</td>
+                <td>&nbsp;</td>
+                {% if 'G-10' in acts %}<td class='station_active'>{% else %}<td class='station_name'>{% endif %}G-10</td>
+                {% if 'G-09' in acts %}<td class='station_active'>{% else %}<td class='station_name'>{% endif %}G-09</td>
+                <td>&nbsp;</td>
+                {% if 'G-08' in acts %}<td class='station_active'>{% else %}<td class='station_name'>{% endif %}G-08</td>
+                {% if 'G-07' in acts %}<td class='station_active'>{% else %}<td class='station_name'>{% endif %}G-07</td>
+                <td>&nbsp;</td>
+                {% for x in range (9-buffer10|length)%}<td class='cart_buffer_clear'>&nbsp;</td>{% endfor%}
+                {% for x in buffer10 %}
+                {% if x[0] in cart %} <td class='cart_found' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% else %}<td class='cart_buffer' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% endif %}{% if x[0] in cmw %} <span class ='cmw'> {{x[0]}} </span> {% else %} {{x[0]}} {% endif %}</td>
+                {% endfor%}
+                {% if 'buffer10' in buffers_fifo and buffers_fifo.index('buffer10')+1 == 1 %}<td class='buffer_name_highprio'>{%else%}<td class='buffer_name'>{%endif%}B-RETURNS-08</td><td><span class='buffer_fifo'>{% if 'buffer10' in buffers_fifo %}{{buffers_fifo.index('buffer10')+1}}{% else %}&nbsp;{% endif %}</span></td>
+            </tr>
+            <tr>{% for n in range(7) %}<td>&nbsp;</td>{% endfor%}
+                {% if G12[0][0] in cart %} <td class='cart_found' onclick="scd_allocated({{G12[0][0]}},'{{G12[0][1]}}','{{G12[0][2]}}','{{G12[0][3]}}')">{% else %}<td class='cart' onclick="scd_allocated({{G12[0][0]}},'{{G12[0][1]}}','{{G12[0][2]}}','{{G12[0][3]}}')">{% endif %}{%if '1' in G12[0][4]%} <span class='blink2_mode'>{{G12[0][0]}}</span> {%elif '2' in G12[0][4]%}<span class='blink3_mode'>{{G12[0][0]}}</span> {%else%}{{G12[0][0]}} {%endif%}</td>
+                {% if G11[0][0] in cart %} <td class='cart_found' onclick="scd_allocated({{G11[0][0]}},'{{G11[0][1]}}','{{G11[0][2]}}','{{G11[0][3]}}')">{% else %}<td class='cart' onclick="scd_allocated({{G11[0][0]}},'{{G11[0][1]}}','{{G11[0][2]}}','{{G11[0][3]}}')">{% endif %}{%if '1' in G11[0][4]%} <span class='blink2_mode'>{{G11[0][0]}}</span> {%elif '2' in G11[0][4]%}<span class='blink3_mode'>{{G11[0][0]}}</span> {%else%}{{G11[0][0]}} {%endif%}</td>
+                <td>&nbsp;</td>
+                {% if G10[0][0] in cart %} <td class='cart_found' onclick="scd_allocated({{G10[0][0]}},'{{G10[0][1]}}','{{G10[0][2]}}','{{G10[0][3]}}')">{% else %}<td class='cart' onclick="scd_allocated({{G10[0][0]}},'{{G10[0][1]}}','{{G10[0][2]}}','{{G10[0][3]}}')">{% endif %}{%if '1' in G10[0][4]%} <span class='blink2_mode'>{{G10[0][0]}}</span> {%elif '2' in G10[0][4]%}<span class='blink3_mode'>{{G10[0][0]}}</span> {%else%}{{G10[0][0]}} {%endif%}</td>
+                {% if G9[0][0] in cart %} <td class='cart_found' onclick="scd_allocated({{G9[0][0]}},'{{G9[0][1]}}','{{G9[0][2]}}','{{G9[0][3]}}')">{% else %}<td class='cart' onclick="scd_allocated({{G9[0][0]}},'{{G9[0][1]}}','{{G9[0][2]}}','{{G9[0][3]}}')">{% endif %}{%if '1' in G9[0][4]%} <span class='blink2_mode'>{{G9[0][0]}}</span> {%elif '2' in G9[0][4]%}<span class='blink3_mode'>{{G9[0][0]}}</span> {%else%}{{G9[0][0]}} {%endif%}</td>
+                <td>&nbsp;</td>
+                {% if G8[0][0] in cart %} <td class='cart_found' onclick="scd_allocated({{G8[0][0]}},'{{G8[0][1]}}','{{G8[0][2]}}','{{G8[0][3]}}')">{% else %}<td class='cart' onclick="scd_allocated({{G8[0][0]}},'{{G8[0][1]}}','{{G8[0][2]}}','{{G8[0][3]}}')">{% endif %}{%if '1' in G8[0][4]%} <span class='blink2_mode'>{{G8[0][0]}}</span> {%elif '2' in G8[0][4]%}<span class='blink3_mode'>{{G8[0][0]}}</span> {%else%}{{G8[0][0]}} {%endif%}</td>
+                {% if G7[0][0] in cart %} <td class='cart_found' onclick="scd_allocated({{G7[0][0]}},'{{G7[0][1]}}','{{G7[0][2]}}','{{G7[0][3]}}')">{% else %}<td class='cart' onclick="scd_allocated({{G7[0][0]}},'{{G7[0][1]}}','{{G7[0][2]}}','{{G7[0][3]}}')">{% endif %}{%if '1' in G7[0][4]%} <span class='blink2_mode'>{{G7[0][0]}}</span> {%elif '2' in G7[0][4]%}<span class='blink3_mode'>{{G7[0][0]}}</span> {%else%}{{G7[0][0]}} {%endif%}</td>
+                <td>&nbsp;</td>
+                {% for x in range (9-buffer11|length)%}<td class='cart_buffer_clear'>&nbsp;</td>{% endfor%}
+                {% for x in buffer11 %}
+                {% if x[0] in cart %} <td class='cart_found' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% else %}<td class='cart_buffer' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% endif %}{% if x[0] in cmw %} <span class ='cmw'> {{x[0]}} </span> {% else %} {{x[0]}} {% endif %}</td>
+                {% endfor%}
+                {% if 'buffer11' in buffers_fifo and buffers_fifo.index('buffer11')+1 == 1 %}<td class='buffer_name_highprio'>{%else%}<td class='buffer_name'>{%endif%}B-RETURNS-09</td><td><span class='buffer_fifo'>{% if 'buffer11' in buffers_fifo %}{{buffers_fifo.index('buffer11')+1}}{% else %}&nbsp;{% endif %}</span></td>
+            </tr>
+            <tr><td>&nbsp;</td>{% if timeout_carts_by_station[4][0] in ''%}<td rowspan='2'>{%else%}<td rowspan='2' class="fifo_carts">{%endif%}{{timeout_carts_by_station[4][0]}}</td>{% if timeout_carts_by_station[4][0] in ''%}<td rowspan='2'>{%else%}<td rowspan='2' class="fifo_carts">{%endif%}{{timeout_carts_by_station[4][1]}}</td>{% if timeout_carts_by_station[4][0] in ''%}<td rowspan='2'>{%else%}<td rowspan='2' class="fifo_carts">{%endif%}{{timeout_carts_by_station[4][2]}}</td>{% if timeout_carts_by_station[4][0] in ''%}<td rowspan='2'>{%else%}<td rowspan='2' class="fifo_carts">{%endif%}{{timeout_carts_by_station[4][3]}}</td>{% if timeout_carts_by_station[4][0] in ''%}<td rowspan='2'>{%else%}<td rowspan='2' class="fifo_carts">{%endif%}{{timeout_carts_by_station[4][4]}}</td>{% for n in range(6) %}<td>&nbsp;</td>{% endfor%}
+                {% if 'G-06' in acts %}<td class='station_active'>{% else %}<td class='station_name'>{% endif %}G-06</td>
+                {% if 'G-05' in acts %}<td class='station_active'>{% else %}<td class='station_name'>{% endif %}G-05</td>
+                <td>&nbsp;</td>
+                {% if 'G-04' in acts %}<td class='station_active'>{% else %}<td class='station_name'>{% endif %}G-04</td>
+                {% if 'G-03' in acts %}<td class='station_active'>{% else %}<td class='station_name'>{% endif %}G-03</td>
+                <td>&nbsp;</td>
+                {% if 'G-02' in acts %}<td class='station_active'>{% else %}<td class='station_name'>{% endif %}G-02</td>
+                {% if 'G-01' in acts %}<td class='station_active'>{% else %}<td class='station_name'>{% endif %}G-01</td>
+                <td>&nbsp;</td>
+                {% for x in range (9-buffer12|length)%}<td class='cart_buffer_clear'>&nbsp;</td>{% endfor%}
+                {% for x in buffer12 %}
+                {% if x[0] in cart %} <td class='cart_found' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% else %}<td class='cart_buffer' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% endif %}{% if x[0] in cmw %} <span class ='cmw'> {{x[0]}} </span> {% else %} {{x[0]}} {% endif %}</td>
+                {% endfor%}
+                {% if 'buffer12' in buffers_fifo and buffers_fifo.index('buffer12')+1 == 1 %}<td class='buffer_name_highprio'>{%else%}<td class='buffer_name'>{%endif%}B-RETURNS-10</td><td><span class='buffer_fifo'>{% if 'buffer12' in buffers_fifo %}{{buffers_fifo.index('buffer12')+1}}{% else %}&nbsp;{% endif %}</span></td>
+            </tr>
+            <tr>{% for n in range(7) %}<td>&nbsp;</td>{% endfor%}
+                {% if G6[0][0] in cart %} <td class='cart_found' onclick="scd_allocated({{G6[0][0]}},'{{G6[0][1]}}','{{G6[0][2]}}','{{G6[0][3]}}')">{% else %}<td class='cart' onclick="scd_allocated({{G6[0][0]}},'{{G6[0][1]}}','{{G6[0][2]}}','{{G6[0][3]}}')">{% endif %}{%if '1' in G6[0][4]%} <span class='blink2_mode'>{{G6[0][0]}}</span> {%elif '2' in G6[0][4]%}<span class='blink3_mode'>{{G6[0][0]}}</span> {%else%}{{G6[0][0]}} {%endif%}</td>
+                {% if G5[0][0] in cart %} <td class='cart_found' onclick="scd_allocated({{G5[0][0]}},'{{G5[0][1]}}','{{G5[0][2]}}','{{G5[0][3]}}')">{% else %}<td class='cart' onclick="scd_allocated({{G5[0][0]}},'{{G5[0][1]}}','{{G5[0][2]}}','{{G5[0][3]}}')">{% endif %}{%if '1' in G5[0][4]%} <span class='blink2_mode'>{{G5[0][0]}}</span> {%elif '2' in G5[0][4]%}<span class='blink3_mode'>{{G5[0][0]}}</span> {%else%}{{G5[0][0]}} {%endif%}</td>
+                <td>&nbsp;</td>
+                {% if G4[0][0] in cart %} <td class='cart_found' onclick="scd_allocated({{G4[0][0]}},'{{G4[0][1]}}','{{G4[0][2]}}','{{G4[0][3]}}')">{% else %}<td class='cart' onclick="scd_allocated({{G4[0][0]}},'{{G4[0][1]}}','{{G4[0][2]}}','{{G4[0][3]}}')">{% endif %}{%if '1' in G4[0][4]%} <span class='blink2_mode'>{{G4[0][0]}}</span> {%elif '2' in G4[0][4]%}<span class='blink3_mode'>{{G4[0][0]}}</span> {%else%}{{G4[0][0]}} {%endif%}</td>
+                {% if G3[0][0] in cart %} <td class='cart_found' onclick="scd_allocated({{G3[0][0]}},'{{G3[0][1]}}','{{G3[0][2]}}','{{G3[0][3]}}')">{% else %}<td class='cart' onclick="scd_allocated({{G3[0][0]}},'{{G3[0][1]}}','{{G3[0][2]}}','{{G3[0][3]}}')">{% endif %}{%if '1' in G3[0][4]%} <span class='blink2_mode'>{{G3[0][0]}}</span> {%elif '2' in G3[0][4]%}<span class='blink3_mode'>{{G3[0][0]}}</span> {%else%}{{G3[0][0]}} {%endif%}</td>
+                <td>&nbsp;</td>
+                {% if G2[0][0] in cart %} <td class='cart_found' onclick="scd_allocated({{G2[0][0]}},'{{G2[0][1]}}','{{G2[0][2]}}','{{G2[0][3]}}')">{% else %}<td class='cart' onclick="scd_allocated({{G2[0][0]}},'{{G2[0][1]}}','{{G2[0][2]}}','{{G2[0][3]}}')">{% endif %}{%if '1' in G2[0][4]%} <span class='blink2_mode'>{{G2[0][0]}}</span> {%elif '2' in G2[0][4]%}<span class='blink3_mode'>{{G2[0][0]}}</span> {%else%}{{G2[0][0]}} {%endif%}</td>
+                {% if G1[0][0] in cart %} <td class='cart_found' onclick="scd_allocated({{G1[0][0]}},'{{G1[0][1]}}','{{G1[0][2]}}','{{G1[0][3]}}')">{% else %}<td class='cart' onclick="scd_allocated({{G1[0][0]}},'{{G1[0][1]}}','{{G1[0][2]}}','{{G1[0][3]}}')">{% endif %}{%if '1' in G1[0][4]%} <span class='blink2_mode'>{{G1[0][0]}}</span> {%elif '2' in G1[0][4]%}<span class='blink3_mode'>{{G1[0][0]}}</span> {%else%}{{G1[0][0]}} {%endif%}</td>
+                <td>&nbsp;</td>
+                {% for x in range (9-buffer13|length)%}<td class='cart_buffer_clear'>&nbsp;</td>{% endfor%}
+                {% for x in buffer13 %}
+                {% if x[0] in cart %} <td class='cart_found' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% else %}<td class='cart_buffer' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% endif %}{% if x[0] in cmw %} <span class ='cmw'> {{x[0]}} </span> {% else %} {{x[0]}} {% endif %}</td>
+                {% endfor%}
+                {% if 'buffer13' in buffers_fifo and buffers_fifo.index('buffer13')+1 == 1 %}<td class='buffer_name_highprio'>{%else%}<td class='buffer_name'>{%endif%}B-RETURNS-11</td><td><span class='buffer_fifo'>{% if 'buffer13' in buffers_fifo %}{{buffers_fifo.index('buffer13')+1}}{% else %}&nbsp;{% endif %}</span></td>
+            </tr>
+            <tr><td>&nbsp;</td>{% if timeout_carts_by_station[5][0] in ''%}<td rowspan='2'>{%else%}<td rowspan='2' class="fifo_carts">{%endif%}{{timeout_carts_by_station[5][0]}}</td>{% if timeout_carts_by_station[5][0] in ''%}<td rowspan='2'>{%else%}<td rowspan='2' class="fifo_carts">{%endif%}{{timeout_carts_by_station[5][1]}}</td>{% if timeout_carts_by_station[5][0] in ''%}<td rowspan='2'>{%else%}<td rowspan='2' class="fifo_carts">{%endif%}{{timeout_carts_by_station[5][2]}}</td>{% if timeout_carts_by_station[5][0] in ''%}<td rowspan='2'>{%else%}<td rowspan='2' class="fifo_carts">{%endif%}{{timeout_carts_by_station[5][3]}}</td>{% if timeout_carts_by_station[5][0] in ''%}<td rowspan='2'>{%else%}<td rowspan='2' class="fifo_carts">{%endif%}{{timeout_carts_by_station[5][4]}}</td>{% for n in range(6) %}<td>&nbsp;</td>{% endfor%}
+                {% if 'F-12' in acts %}<td class='station_active'>{% else %}<td class='station_name'>{% endif %}F-12</td>
+                {% if 'F-11' in acts %}<td class='station_active'>{% else %}<td class='station_name'>{% endif %}F-11</td>
+                <td>&nbsp;</td>
+                {% if 'F-10' in acts %}<td class='station_active'>{% else %}<td class='station_name'>{% endif %}F-10</td>
+                {% if 'F-09' in acts %}<td class='station_active'>{% else %}<td class='station_name'>{% endif %}F-09</td>
+                <td>&nbsp;</td>
+                {% if 'F-08' in acts %}<td class='station_active'>{% else %}<td class='station_name'>{% endif %}F-08</td>
+                {% if 'F-07' in acts %}<td class='station_active'>{% else %}<td class='station_name'>{% endif %}F-07</td>
+                <td>&nbsp;</td>
+                {% for x in range (9-buffer14|length)%}<td class='cart_buffer_clear'>&nbsp;</td>{% endfor%}
+                {% for x in buffer14 %}
+                {% if x[0] in cart %} <td class='cart_found' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% else %}<td class='cart_buffer' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% endif %}{% if x[0] in cmw %} <span class ='cmw'> {{x[0]}} </span> {% else %} {{x[0]}} {% endif %}</td>
+                {% endfor%}
+                {% if 'buffer14' in buffers_fifo and buffers_fifo.index('buffer14')+1 == 1 %}<td class='buffer_name_highprio'>{%else%}<td class='buffer_name'>{%endif%}B-RETURNS-12</td><td><span class='buffer_fifo'>{% if 'buffer15' in buffers_fifo %}{{buffers_fifo.index('buffer15')+1}}{% else %}&nbsp;{% endif %}</span></td>
+            </tr>
+            <tr>{% for n in range(7) %}<td>&nbsp;</td>{% endfor%}
+                {% if F12[0][0] in cart %} <td class='cart_found' onclick="scd_allocated({{F12[0][0]}},'{{F12[0][1]}}','{{F12[0][2]}}','{{F12[0][3]}}')">{% else %}<td class='cart' onclick="scd_allocated({{F12[0][0]}},'{{F12[0][1]}}','{{F12[0][2]}}','{{F12[0][3]}}')">{% endif %}{%if '1' in F12[0][4]%} <span class='blink2_mode'>{{F12[0][0]}}</span> {%elif '2' in F12[0][4]%}<span class='blink3_mode'>{{F12[0][0]}}</span> {%else%}{{F12[0][0]}} {%endif%}</td>
+                {% if F11[0][0] in cart %} <td class='cart_found' onclick="scd_allocated({{F11[0][0]}},'{{F11[0][1]}}','{{F11[0][2]}}','{{F11[0][3]}}')">{% else %}<td class='cart' onclick="scd_allocated({{F11[0][0]}},'{{F11[0][1]}}','{{F11[0][2]}}','{{F11[0][3]}}')">{% endif %}{%if '1' in F11[0][4]%} <span class='blink2_mode'>{{F11[0][0]}}</span> {%elif '2' in F11[0][4]%}<span class='blink3_mode'>{{F11[0][0]}}</span> {%else%}{{F11[0][0]}} {%endif%}</td>
+                <td>&nbsp;</td>
+                {% if F10[0][0] in cart %} <td class='cart_found' onclick="scd_allocated({{F10[0][0]}},'{{F10[0][1]}}','{{F10[0][2]}}','{{F10[0][3]}}')">{% else %}<td class='cart' onclick="scd_allocated({{F10[0][0]}},'{{F10[0][1]}}','{{F10[0][2]}}','{{F10[0][3]}}')">{% endif %}{%if '1' in F10[0][4]%} <span class='blink2_mode'>{{F10[0][0]}}</span> {%elif '2' in F10[0][4]%}<span class='blink3_mode'>{{F10[0][0]}}</span> {%else%}{{F10[0][0]}} {%endif%}</td>
+                {% if F9[0][0] in cart %} <td class='cart_found' onclick="scd_allocated({{F9[0][0]}},'{{F9[0][1]}}','{{F9[0][2]}}','{{F9[0][3]}}')">{% else %}<td class='cart' onclick="scd_allocated({{F9[0][0]}},'{{F9[0][1]}}','{{F9[0][2]}}','{{F9[0][3]}}')">{% endif %}{%if '1' in F9[0][4]%} <span class='blink2_mode'>{{F9[0][0]}}</span> {%elif '2' in F9[0][4]%}<span class='blink3_mode'>{{F9[0][0]}}</span> {%else%}{{F9[0][0]}} {%endif%}</td>
+                <td>&nbsp;</td>
+                {% if F8[0][0] in cart %} <td class='cart_found' onclick="scd_allocated({{F8[0][0]}},'{{F8[0][1]}}','{{F8[0][2]}}','{{F8[0][3]}}')">{% else %}<td class='cart' onclick="scd_allocated({{F8[0][0]}},'{{F8[0][1]}}','{{F8[0][2]}}','{{F8[0][3]}}')">{% endif %}{%if '1' in F8[0][4]%} <span class='blink2_mode'>{{F8[0][0]}}</span> {%elif '2' in F8[0][4]%}<span class='blink3_mode'>{{F8[0][0]}}</span> {%else%}{{F8[0][0]}} {%endif%}</td>
+                {% if F7[0][0] in cart %} <td class='cart_found' onclick="scd_allocated({{F7[0][0]}},'{{F7[0][1]}}','{{F7[0][2]}}','{{F7[0][3]}}')">{% else %}<td class='cart' onclick="scd_allocated({{F7[0][0]}},'{{F7[0][1]}}','{{F7[0][2]}}','{{F7[0][3]}}')">{% endif %}{%if '1' in F7[0][4]%} <span class='blink2_mode'>{{F7[0][0]}}</span> {%elif '2' in F7[0][4]%}<span class='blink3_mode'>{{F7[0][0]}}</span> {%else%}{{F7[0][0]}} {%endif%}</td>
+                <td>&nbsp;</td>
+                {% for x in range (9-buffer15|length)%}<td class='cart_buffer_clear'>&nbsp;</td>{% endfor%}
+                {% for x in buffer15 %}
+                {% if x[0] in cart %} <td class='cart_found' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% else %}<td class='cart_buffer' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% endif %}{% if x[0] in cmw %} <span class ='cmw'> {{x[0]}} </span> {% else %} {{x[0]}} {% endif %}</td>
+                {% endfor%}
+                {% if 'buffer15' in buffers_fifo and buffers_fifo.index('buffer15')+1 == 1 %}<td class='buffer_name_highprio'>{%else%}<td class='buffer_name'>{%endif%}B-RETURNS-13</td><td><span class='buffer_fifo'>{% if 'buffer15' in buffers_fifo %}{{buffers_fifo.index('buffer15')+1}}{% else %}&nbsp;{% endif %}</span></td>
+            </tr>
+            <tr><td>&nbsp;</td>{% if timeout_carts_by_station[6][0] in ''%}<td rowspan='2'>{%else%}<td rowspan='2' class="fifo_carts">{%endif%}{{timeout_carts_by_station[6][0]}}</td>{% if timeout_carts_by_station[6][0] in ''%}<td rowspan='2'>{%else%}<td rowspan='2' class="fifo_carts">{%endif%}{{timeout_carts_by_station[6][1]}}</td>{% if timeout_carts_by_station[6][0] in ''%}<td rowspan='2'>{%else%}<td rowspan='2' class="fifo_carts">{%endif%}{{timeout_carts_by_station[6][2]}}</td>{% if timeout_carts_by_station[6][0] in ''%}<td rowspan='2'>{%else%}<td rowspan='2' class="fifo_carts">{%endif%}{{timeout_carts_by_station[6][3]}}</td>{% if timeout_carts_by_station[6][0] in ''%}<td rowspan='2'>{%else%}<td rowspan='2' class="fifo_carts">{%endif%}{{timeout_carts_by_station[6][4]}}</td>{% for n in range(6) %}<td>&nbsp;</td>{% endfor%}
+                {% if 'E-12' in acts %}<td class='station_active'>{% else %}<td class='station_name'>{% endif %}E-12</td>
+                {% if 'E-11' in acts %}<td class='station_active'>{% else %}<td class='station_name'>{% endif %}E-11</td>
+                <td>&nbsp;</td>
+                {% if 'E-10' in acts %}<td class='station_active'>{% else %}<td class='station_name'>{% endif %}E-10</td>
+                {% if 'E-09' in acts %}<td class='station_active'>{% else %}<td class='station_name'>{% endif %}E-09</td>
+                <td>&nbsp;</td>
+                {% if 'E-08' in acts %}<td class='station_active'>{% else %}<td class='station_name'>{% endif %}E-08</td>
+                {% if 'E-07' in acts %}<td class='station_active'>{% else %}<td class='station_name'>{% endif %}E-07</td>
+                <td>&nbsp;</td>
+                {% for x in range (9-buffer16|length)%}<td class='cart_buffer_clear'>&nbsp;</td>{% endfor%}
+                {% for x in buffer16 %}
+                {% if x[0] in cart %} <td class='cart_found' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% else %}<td class='cart_buffer' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% endif %}{% if x[0] in cmw %} <span class ='cmw'> {{x[0]}} </span> {% else %} {{x[0]}} {% endif %}</td>
+                {% endfor%}
+                {% if 'buffer16' in buffers_fifo and buffers_fifo.index('buffer16')+1 == 1 %}<td class='buffer_name_highprio'>{%else%}<td class='buffer_name'>{%endif%}B-RETURNS-14</td><td><span class='buffer_fifo'>{% if 'buffer16' in buffers_fifo %}{{buffers_fifo.index('buffer16')+1}}{% else %}&nbsp;{% endif %}</span></td>
+            </tr>
+            <tr>{% for n in range(7) %}<td>&nbsp;</td>{% endfor%}
+                {% if E12[0][0] in cart %} <td class='cart_found' onclick="scd_allocated({{E12[0][0]}},'{{E12[0][1]}}','{{E12[0][2]}}','{{E12[0][3]}}')">{% else %}<td class='cart' onclick="scd_allocated({{E12[0][0]}},'{{E12[0][1]}}','{{E12[0][2]}}','{{E12[0][3]}}')">{% endif %}{%if '1' in E12[0][4]%} <span class='blink2_mode'>{{E12[0][0]}}</span> {%elif '2' in E12[0][4]%}<span class='blink3_mode'>{{E12[0][0]}}</span> {%else%}{{E12[0][0]}} {%endif%}</td>
+                {% if E11[0][0] in cart %} <td class='cart_found' onclick="scd_allocated({{E11[0][0]}},'{{E11[0][1]}}','{{E11[0][2]}}','{{E11[0][3]}}')">{% else %}<td class='cart' onclick="scd_allocated({{E11[0][0]}},'{{E11[0][1]}}','{{E11[0][2]}}','{{E11[0][3]}}')">{% endif %}{%if '1' in E11[0][4]%} <span class='blink2_mode'>{{E11[0][0]}}</span> {%elif '2' in E11[0][4]%}<span class='blink3_mode'>{{E11[0][0]}}</span> {%else%}{{E11[0][0]}} {%endif%}</td>
+                <td>&nbsp;</td>
+                {% if E10[0][0] in cart %} <td class='cart_found' onclick="scd_allocated({{E10[0][0]}},'{{E10[0][1]}}','{{E10[0][2]}}','{{E10[0][3]}}')">{% else %}<td class='cart' onclick="scd_allocated({{E10[0][0]}},'{{E10[0][1]}}','{{E10[0][2]}}','{{E10[0][3]}}')">{% endif %}{%if '1' in E10[0][4]%} <span class='blink2_mode'>{{E10[0][0]}}</span> {%elif '2' in E10[0][4]%}<span class='blink3_mode'>{{E10[0][0]}}</span> {%else%}{{E10[0][0]}} {%endif%}</td>
+                {% if E9[0][0] in cart %} <td class='cart_found' onclick="scd_allocated({{E9[0][0]}},'{{E9[0][1]}}','{{E9[0][2]}}','{{E9[0][3]}}')">{% else %}<td class='cart' onclick="scd_allocated({{E9[0][0]}},'{{E9[0][1]}}','{{E9[0][2]}}','{{E9[0][3]}}')">{% endif %}{%if '1' in E9[0][4]%} <span class='blink2_mode'>{{E9[0][0]}}</span> {%elif '2' in E9[0][4]%}<span class='blink3_mode'>{{E9[0][0]}}</span> {%else%}{{E9[0][0]}} {%endif%}</td>
+                <td>&nbsp;</td>
+                {% if E8[0][0] in cart %} <td class='cart_found' onclick="scd_allocated({{E8[0][0]}},'{{E8[0][1]}}','{{E8[0][2]}}','{{E8[0][3]}}')">{% else %}<td class='cart' onclick="scd_allocated({{E8[0][0]}},'{{E8[0][1]}}','{{E8[0][2]}}','{{E8[0][3]}}')">{% endif %}{%if '1' in E8[0][4]%} <span class='blink2_mode'>{{E8[0][0]}}</span> {%elif '2' in E8[0][4]%}<span class='blink3_mode'>{{E8[0][0]}}</span> {%else%}{{E8[0][0]}} {%endif%}</td>
+                {% if E7[0][0] in cart %} <td class='cart_found' onclick="scd_allocated({{E7[0][0]}},'{{E7[0][1]}}','{{E7[0][2]}}','{{E7[0][3]}}')">{% else %}<td class='cart' onclick="scd_allocated({{E7[0][0]}},'{{E7[0][1]}}','{{E7[0][2]}}','{{E7[0][3]}}')">{% endif %}{%if '1' in E7[0][4]%} <span class='blink2_mode'>{{E7[0][0]}}</span> {%elif '2' in E7[0][4]%}<span class='blink3_mode'>{{E7[0][0]}}</span> {%else%}{{E7[0][0]}} {%endif%}</td>
+                <td>&nbsp;</td>
+                {% for x in range (9-buffer17|length)%}<td class='cart_buffer_clear'>&nbsp;</td>{% endfor%}
+                {% for x in buffer17 %}
+                {% if x[0] in cart %} <td class='cart_found' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% else %}<td class='cart_buffer' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% endif %}{% if x[0] in cmw %} <span class ='cmw'> {{x[0]}} </span> {% else %} {{x[0]}} {% endif %}</td>
+                {% endfor%}
+                {% if 'buffer17' in buffers_fifo and buffers_fifo.index('buffer17')+1 == 1 %}<td class='buffer_name_highprio'>{%else%}<td class='buffer_name'>{%endif%}BFOL-RETURNS-01</td><td><span class='buffer_fifo'>{% if 'buffer17' in buffers_fifo %}{{buffers_fifo.index('buffer17')+1}}{% else %}&nbsp;{% endif %}</span></td>
+            </tr>
+            <tr><td>&nbsp;</td>{% if timeout_carts_by_station[7][0] in ''%}<td rowspan='2'>{%else%}<td rowspan='2' class="fifo_carts">{%endif%}{{timeout_carts_by_station[7][0]}}</td>{% if timeout_carts_by_station[7][0] in ''%}<td rowspan='2'>{%else%}<td rowspan='2' class="fifo_carts">{%endif%}{{timeout_carts_by_station[7][1]}}</td>{% if timeout_carts_by_station[7][0] in ''%}<td rowspan='2'>{%else%}<td rowspan='2' class="fifo_carts">{%endif%}{{timeout_carts_by_station[7][2]}}</td>{% if timeout_carts_by_station[7][0] in ''%}<td rowspan='2'>{%else%}<td rowspan='2' class="fifo_carts">{%endif%}{{timeout_carts_by_station[7][3]}}</td>{% if timeout_carts_by_station[7][0] in ''%}<td rowspan='2'>{%else%}<td rowspan='2' class="fifo_carts">{%endif%}{{timeout_carts_by_station[7][4]}}</td>{% for n in range(6) %}<td>&nbsp;</td>{% endfor%}
+                {% if 'P-06' in acts %}<td class='station_active'>{% else %}<td class='station_name'>{% endif %}P-06</td>
+                {% if '' in acts %}<td class='station_active'>{% else %}<td class='station_name'>{% endif %}</td>
+                <td>&nbsp;</td>
+                {% if 'P-04' in acts %}<td class='station_active'>{% else %}<td class='station_name'>{% endif %}P-04</td>
+                {% if 'P-03' in acts %}<td class='station_active'>{% else %}<td class='station_name'>{% endif %}P-03</td>
+                <td>&nbsp;</td>
+                {% if 'P-02' in acts %}<td class='station_active'>{% else %}<td class='station_name'>{% endif %}P-02</td>
+                {% if 'P-01' in acts %}<td class='station_active'>{% else %}<td class='station_name'>{% endif %}P-01</td>
+                <td>&nbsp;</td>
+                {% for x in range (9-buffer18|length)%}<td class='cart_buffer_clear'>&nbsp;</td>{% endfor%}
+                {% for x in buffer18 %}
+                {% if x[0] in cart %} <td class='cart_found' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% else %}<td class='cart_buffer' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% endif %}{% if x[0] in cmw %} <span class ='cmw'> {{x[0]}} </span> {% else %} {{x[0]}} {% endif %}</td>
+                {% endfor%}
+                {% if 'buffer18' in buffers_fifo and buffers_fifo.index('buffer18')+1 == 1 %}<td class='buffer_name_highprio'>{%else%}<td class='buffer_name'>{%endif%}BFOL-RETURNS-02</td><td><span class='buffer_fifo'>{% if 'buffer18' in buffers_fifo %}{{buffers_fifo.index('buffer18')+1}}{% else %}&nbsp;{% endif %}</span></td>
+            </tr>
+            <tr>{% for n in range(7) %}<td>&nbsp;</td>{% endfor%}
+                {% if P6[0][0] in cart %} <td class='cart_found' onclick="scd_allocated({{P6[0][0]}},'{{P6[0][1]}}','{{P6[0][2]}}','{{P6[0][3]}}')">{% else %}<td class='cart' onclick="scd_allocated({{P6[0][0]}},'{{P6[0][1]}}','{{P6[0][2]}}','{{P6[0][3]}}')">{% endif %}{%if '1' in P6[0][4]%} <span class='blink2_mode'>{{P6[0][0]}}</span> {%elif '2' in P6[0][4]%}<span class='blink3_mode'>{{P6[0][0]}}</span> {%else%}{{P6[0][0]}} {%endif%}</td>
+                {% if E20[0][0] in cart %} <td class='cart_found' onclick="scd_allocated({{E20[0][0]}},'{{E20[0][1]}}','{{E20[0][2]}}','{{E20[0][3]}}')">{% else %}<td class='cart' onclick="scd_allocated({{E20[0][0]}},'{{E20[0][1]}}','{{E20[0][2]}}','{{E20[0][3]}}')">{% endif %}{%if '1' in E20[0][4]%} <span class='blink2_mode'>{{E20[0][0]}}</span> {%elif '2' in E20[0][4]%}<span class='blink3_mode'>{{E20[0][0]}}</span> {%else%}{{E20[0][0]}} {%endif%}</td>
+                <td>&nbsp;</td>
+                {% if P4[0][0] in cart %} <td class='cart_found' onclick="scd_allocated({{P4[0][0]}},'{{P4[0][1]}}','{{P4[0][2]}}','{{P4[0][3]}}')">{% else %}<td class='cart' onclick="scd_allocated({{P4[0][0]}},'{{P4[0][1]}}','{{P4[0][2]}}','{{P4[0][3]}}')">{% endif %}{%if '1' in P4[0][4]%} <span class='blink2_mode'>{{P4[0][0]}}</span> {%elif '2' in P4[0][4]%}<span class='blink3_mode'>{{P4[0][0]}}</span> {%else%}{{P4[0][0]}} {%endif%}</td>
+                {% if P3[0][0] in cart %} <td class='cart_found' onclick="scd_allocated({{P3[0][0]}},'{{P3[0][1]}}','{{P3[0][2]}}','{{P3[0][3]}}')">{% else %}<td class='cart' onclick="scd_allocated({{P3[0][0]}},'{{P3[0][1]}}','{{P3[0][2]}}','{{P3[0][3]}}')">{% endif %}{%if '1' in P3[0][4]%} <span class='blink2_mode'>{{P3[0][0]}}</span> {%elif '2' in P3[0][4]%}<span class='blink3_mode'>{{P3[0][0]}}</span> {%else%}{{P3[0][0]}} {%endif%}</td>
+                <td>&nbsp;</td>
+                {% if P2[0][0] in cart %} <td class='cart_found' onclick="scd_allocated({{P2[0][0]}},'{{P2[0][1]}}','{{P2[0][2]}}','{{P2[0][3]}}')">{% else %}<td class='cart' onclick="scd_allocated({{P2[0][0]}},'{{P2[0][1]}}','{{P2[0][2]}}','{{P2[0][3]}}')">{% endif %}{%if '1' in P2[0][4]%} <span class='blink2_mode'>{{P2[0][0]}}</span> {%elif '2' in P2[0][4]%}<span class='blink3_mode'>{{P2[0][0]}}</span> {%else%}{{P2[0][0]}} {%endif%}</td>
+                {% if P1[0][0] in cart %} <td class='cart_found' onclick="scd_allocated({{P1[0][0]}},'{{P1[0][1]}}','{{P1[0][2]}}','{{P1[0][3]}}')">{% else %}<td class='cart' onclick="scd_allocated({{P1[0][0]}},'{{P1[0][1]}}','{{P1[0][2]}}','{{P1[0][3]}}')">{% endif %}{%if '1' in P1[0][4]%} <span class='blink2_mode'>{{P1[0][0]}}</span> {%elif '2' in P1[0][4]%}<span class='blink3_mode'>{{P1[0][0]}}</span> {%else%}{{P1[0][0]}} {%endif%}</td>
+                <td>&nbsp;</td>
+                {% for x in range (9-buffer19|length)%}<td class='cart_buffer_clear'>&nbsp;</td>{% endfor%}
+                {% for x in buffer19 %}
+                {% if x[0] in cart %} <td class='cart_found' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% else %}<td class='cart_buffer' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% endif %}{% if x[0] in cmw %} <span class ='cmw'> {{x[0]}} </span> {% else %} {{x[0]}} {% endif %}</td>
+                {% endfor%}
+                {% if 'buffer19' in buffers_fifo and buffers_fifo.index('buffer19')+1 == 1 %}<td class='buffer_name_highprio'>{%else%}<td class='buffer_name'>{%endif%}BFOL-RETURNS-03</td><td><span class='buffer_fifo'>{% if 'buffer19' in buffers_fifo %}{{buffers_fifo.index('buffer19')+1}}{% else %}&nbsp;{% endif %}</span></td>
+            </tr>
+            <tr>{% for n in range(24) %}<td>&nbsp;</td>{% endfor%}</tr>
+            <tr><td><span class='buffer_fifo'>{% if 'buffer20' in buffers_fifo %}{{buffers_fifo.index('buffer20')+1}}{% else %}&nbsp;{% endif %}</span></td>
+                {% if 'buffer20' in buffers_fifo and buffers_fifo.index('buffer20')+1 == 1 %}<td class='buffer_name_highprio'>{%else%}<td class='buffer_name'>{%endif%}B-RETURNS-36</td>
+                {% for x in buffer20[::-1] %}
+                {% if x[0] in cart %} <td class='cart_found' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% else %}<td class='cart_buffer' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% endif %}{% if x[0] in cmw %} <span class ='cmw'> {{x[0]}} </span> {% else %} {{x[0]}} {% endif %}</td>
+                {% endfor%}
+                {% for x in range (9-buffer20|length)%}<td class='cart_buffer_clear'>&nbsp;</td>{% endfor%}
+                <td>&nbsp;</td>
+                {% if 'E-06' in acts %}<td class='station_active'>{% else %}<td class='station_name'>{% endif %}E-06</td>
+                {% if 'E-05' in acts %}<td class='station_active'>{% else %}<td class='station_name'>{% endif %}E-05</td>
+                <td>&nbsp;</td>
+                {% if 'E-04' in acts %}<td class='station_active'>{% else %}<td class='station_name'>{% endif %}E-04</td>
+                {% if 'E-03' in acts %}<td class='station_active'>{% else %}<td class='station_name'>{% endif %}E-03</td>
+                <td>&nbsp;</td>
+                {% if 'E-02' in acts %}<td class='station_active'>{% else %}<td class='station_name'>{% endif %}E-02</td>
+                {% if 'E-01' in acts %}<td class='station_active'>{% else %}<td class='station_name'>{% endif %}E-01</td>
+                <td>&nbsp;</td>
+                {% for x in range (9-buffer21|length)%}<td class='cart_buffer_clear'>&nbsp;</td>{% endfor%}
+                {% for x in buffer21 %}
+                {% if x[0] in cart %} <td class='cart_found' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% else %}<td class='cart_buffer' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% endif %}{% if x[0] in cmw %} <span class ='cmw'> {{x[0]}} </span> {% else %} {{x[0]}} {% endif %}</td>
+                {% endfor%}
+                {% if 'buffer21' in buffers_fifo and buffers_fifo.index('buffer21')+1 == 1 %}<td class='buffer_name_highprio'>{%else%}<td class='buffer_name'>{%endif%}B-RETURNS-15</td><td><span class='buffer_fifo'>{% if 'buffer21' in buffers_fifo %}{{buffers_fifo.index('buffer21')+1}}{% else %}&nbsp;{% endif %}</span></td>
+            </tr>
+            <tr><td><span class='buffer_fifo'>{% if 'buffer22' in buffers_fifo %}{{buffers_fifo.index('buffer22')+1}}{% else %}&nbsp;{% endif %}</span></td>
+                {% if 'buffer22' in buffers_fifo and buffers_fifo.index('buffer22')+1 == 1 %}<td class='buffer_name_highprio'>{%else%}<td class='buffer_name'>{%endif%}B-RETURNS-37</td>
+                {% for x in buffer22[::-1] %}
+                {% if x[0] in cart %} <td class='cart_found' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% else %}<td class='cart_buffer' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% endif %}{% if x[0] in cmw %} <span class ='cmw'> {{x[0]}} </span> {% else %} {{x[0]}} {% endif %}</td>
+                {% endfor%}
+                {% for x in range (9-buffer22|length)%}<td class='cart_buffer_clear'>&nbsp;</td>{% endfor%}
+                <td>&nbsp;</td>
+                {% if E6[0][0] in cart %} <td class='cart_found' onclick="scd_allocated({{E6[0][0]}},'{{E6[0][1]}}','{{E6[0][2]}}','{{E6[0][3]}}')">{% else %}<td class='cart' onclick="scd_allocated({{E6[0][0]}},'{{E6[0][1]}}','{{E6[0][2]}}','{{E6[0][3]}}')">{% endif %}{%if '1' in E6[0][4]%} <span class='blink2_mode'>{{E6[0][0]}}</span> {%elif '2' in E6[0][4]%}<span class='blink3_mode'>{{E6[0][0]}}</span> {%else%}{{E6[0][0]}} {%endif%}</td>
+                {% if E5[0][0] in cart %} <td class='cart_found' onclick="scd_allocated({{E5[0][0]}},'{{E5[0][1]}}','{{E5[0][2]}}','{{E5[0][3]}}')">{% else %}<td class='cart' onclick="scd_allocated({{E5[0][0]}},'{{E5[0][1]}}','{{E5[0][2]}}','{{E5[0][3]}}')">{% endif %}{%if '1' in E5[0][4]%} <span class='blink2_mode'>{{E5[0][0]}}</span> {%elif '2' in E5[0][4]%}<span class='blink3_mode'>{{E5[0][0]}}</span> {%else%}{{E5[0][0]}} {%endif%}</td>
+                <td>&nbsp;</td>
+                {% if E4[0][0] in cart %} <td class='cart_found' onclick="scd_allocated({{E4[0][0]}},'{{E4[0][1]}}','{{E4[0][2]}}','{{E4[0][3]}}')">{% else %}<td class='cart' onclick="scd_allocated({{E4[0][0]}},'{{E4[0][1]}}','{{E4[0][2]}}','{{E4[0][3]}}')">{% endif %}{%if '1' in E4[0][4]%} <span class='blink2_mode'>{{E4[0][0]}}</span> {%elif '2' in E4[0][4]%}<span class='blink3_mode'>{{E4[0][0]}}</span> {%else%}{{E4[0][0]}} {%endif%}</td>
+                {% if E3[0][0] in cart %} <td class='cart_found' onclick="scd_allocated({{E3[0][0]}},'{{E3[0][1]}}','{{E3[0][2]}}','{{E3[0][3]}}')">{% else %}<td class='cart' onclick="scd_allocated({{E3[0][0]}},'{{E3[0][1]}}','{{E3[0][2]}}','{{E3[0][3]}}')">{% endif %}{%if '1' in E3[0][4]%} <span class='blink2_mode'>{{E3[0][0]}}</span> {%elif '2' in E3[0][4]%}<span class='blink3_mode'>{{E3[0][0]}}</span> {%else%}{{E3[0][0]}} {%endif%}</td>
+                <td>&nbsp;</td>
+                {% if E2[0][0] in cart %} <td class='cart_found' onclick="scd_allocated({{E2[0][0]}},'{{E2[0][1]}}','{{E2[0][2]}}','{{E2[0][3]}}')">{% else %}<td class='cart' onclick="scd_allocated({{E2[0][0]}},'{{E2[0][1]}}','{{E2[0][2]}}','{{E2[0][3]}}')">{% endif %}{%if '1' in E2[0][4]%} <span class='blink2_mode'>{{E2[0][0]}}</span> {%elif '2' in E2[0][4]%}<span class='blink3_mode'>{{E2[0][0]}}</span> {%else%}{{E2[0][0]}} {%endif%}</td>
+                {% if E1[0][0] in cart %} <td class='cart_found' onclick="scd_allocated({{E1[0][0]}},'{{E1[0][1]}}','{{E1[0][2]}}','{{E1[0][3]}}')">{% else %}<td class='cart' onclick="scd_allocated({{E1[0][0]}},'{{E1[0][1]}}','{{E1[0][2]}}','{{E1[0][3]}}')">{% endif %}{%if '1' in E1[0][4]%} <span class='blink2_mode'>{{E1[0][0]}}</span> {%elif '2' in E1[0][4]%}<span class='blink3_mode'>{{E1[0][0]}}</span> {%else%}{{E1[0][0]}} {%endif%}</td>
+                <td>&nbsp;</td>
+                {% for x in range (9-buffer23|length)%}<td class='cart_buffer_clear'>&nbsp;</td>{% endfor%}
+                {% for x in buffer23 %}
+                {% if x[0] in cart %} <td class='cart_found' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% else %}<td class='cart_buffer' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% endif %}{% if x[0] in cmw %} <span class ='cmw'> {{x[0]}} </span> {% else %} {{x[0]}} {% endif %}</td>
+                {% endfor%}
+                {% if 'buffer23' in buffers_fifo and buffers_fifo.index('buffer23')+1 == 1 %}<td class='buffer_name_highprio'>{%else%}<td class='buffer_name'>{%endif%}B-RETURNS-16</td><td><span class='buffer_fifo'>{% if 'buffer23' in buffers_fifo %}{{buffers_fifo.index('buffer23')+1}}{% else %}&nbsp;{% endif %}</span></td>
+            </tr>
+            <tr><td><span class='buffer_fifo'>{% if 'buffer24' in buffers_fifo %}{{buffers_fifo.index('buffer24')+1}}{% else %}&nbsp;{% endif %}</span></td>
+                {% if 'buffer24' in buffers_fifo and buffers_fifo.index('buffer24')+1 == 1 %}<td class='buffer_name_highprio'>{%else%}<td class='buffer_name'>{%endif%}B-RETURNS-38</td>
+                {% for x in buffer24[::-1] %}
+                {% if x[0] in cart %} <td class='cart_found' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% else %}<td class='cart_buffer' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% endif %}{% if x[0] in cmw %} <span class ='cmw'> {{x[0]}} </span> {% else %} {{x[0]}} {% endif %}</td>
+                {% endfor%}
+                {% for x in range (9-buffer24|length)%}<td class='cart_buffer_clear'>&nbsp;</td>{% endfor%}
+                <td>&nbsp;</td>
+                {% if 'D-12' in acts %}<td class='station_active'>{% else %}<td class='station_name'>{% endif %}D-12</td>
+                {% if 'D-11' in acts %}<td class='station_active'>{% else %}<td class='station_name'>{% endif %}D-11</td>
+                <td>&nbsp;</td>
+                {% if 'D-10' in acts %}<td class='station_active'>{% else %}<td class='station_name'>{% endif %}D-10</td>
+                {% if 'D-09' in acts %}<td class='station_active'>{% else %}<td class='station_name'>{% endif %}D-09</td>
+                <td>&nbsp;</td>
+                {% if 'D-08' in acts %}<td class='station_active'>{% else %}<td class='station_name'>{% endif %}D-08</td>
+                {% if 'D-07' in acts %}<td class='station_active'>{% else %}<td class='station_name'>{% endif %}D-07</td>
+                <td>&nbsp;</td>
+                {% for x in range (9-buffer25|length)%}<td class='cart_buffer_clear'>&nbsp;</td>{% endfor%}
+                {% for x in buffer25 %}
+                {% if x[0] in cart %} <td class='cart_found' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% else %}<td class='cart_buffer' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% endif %}{% if x[0] in cmw %} <span class ='cmw'> {{x[0]}} </span> {% else %} {{x[0]}} {% endif %}</td>
+                {% endfor%}
+                {% if 'buffer25' in buffers_fifo and buffers_fifo.index('buffer25')+1 == 1 %}<td class='buffer_name_highprio'>{%else%}<td class='buffer_name'>{%endif%}B-RETURNS-17</td><td><span class='buffer_fifo'>{% if 'buffer25' in buffers_fifo %}{{buffers_fifo.index('buffer25')+1}}{% else %}&nbsp;{% endif %}</span></td>
+            </tr>
+            <tr><td><span class='buffer_fifo'>{% if 'buffer26' in buffers_fifo %}{{buffers_fifo.index('buffer26')+1}}{% else %}&nbsp;{% endif %}</span></td>
+                {% if 'buffer26' in buffers_fifo and buffers_fifo.index('buffer26')+1 == 1 %}<td class='buffer_name_highprio'>{%else%}<td class='buffer_name'>{%endif%}B-RETURNS-39</td>
+                {% for x in buffer26[::-1] %}
+                {% if x[0] in cart %} <td class='cart_found' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% else %}<td class='cart_buffer' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% endif %}{% if x[0] in cmw %} <span class ='cmw'> {{x[0]}} </span> {% else %} {{x[0]}} {% endif %}</td>
+                {% endfor%}
+                {% for x in range (9-buffer26|length)%}<td class='cart_buffer_clear'>&nbsp;</td>{% endfor%}
+                <td>&nbsp;</td>
+                {% if D12[0][0] in cart %} <td class='cart_found' onclick="scd_allocated({{D12[0][0]}},'{{D12[0][1]}}','{{D12[0][2]}}','{{D12[0][3]}}')">{% else %}<td class='cart' onclick="scd_allocated({{D12[0][0]}},'{{D12[0][1]}}','{{D12[0][2]}}','{{D12[0][3]}}')">{% endif %}{%if '1' in D12[0][4]%} <span class='blink2_mode'>{{D12[0][0]}}</span> {%elif '2' in D12[0][4]%}<span class='blink3_mode'>{{D12[0][0]}}</span> {%else%}{{D12[0][0]}} {%endif%}</td>
+                {% if D11[0][0] in cart %} <td class='cart_found' onclick="scd_allocated({{D11[0][0]}},'{{D11[0][1]}}','{{D11[0][2]}}','{{D11[0][3]}}')">{% else %}<td class='cart' onclick="scd_allocated({{D11[0][0]}},'{{D11[0][1]}}','{{D11[0][2]}}','{{D11[0][3]}}')">{% endif %}{%if '1' in D11[0][4]%} <span class='blink2_mode'>{{D11[0][0]}}</span> {%elif '2' in D11[0][4]%}<span class='blink3_mode'>{{D11[0][0]}}</span> {%else%}{{D11[0][0]}} {%endif%}</td>
+                <td>&nbsp;</td>
+                {% if D10[0][0] in cart %} <td class='cart_found' onclick="scd_allocated({{D10[0][0]}},'{{D10[0][1]}}','{{D10[0][2]}}','{{D10[0][3]}}')">{% else %}<td class='cart' onclick="scd_allocated({{D10[0][0]}},'{{D10[0][1]}}','{{D10[0][2]}}','{{D10[0][3]}}')">{% endif %}{%if '1' in D10[0][4]%} <span class='blink2_mode'>{{D10[0][0]}}</span> {%elif '2' in D10[0][4]%}<span class='blink3_mode'>{{D10[0][0]}}</span> {%else%}{{D10[0][0]}} {%endif%}</td>
+                {% if D9[0][0] in cart %} <td class='cart_found' onclick="scd_allocated({{D9[0][0]}},'{{D9[0][1]}}','{{D9[0][2]}}','{{D9[0][3]}}')">{% else %}<td class='cart' onclick="scd_allocated({{D9[0][0]}},'{{D9[0][1]}}','{{D9[0][2]}}','{{D9[0][3]}}')">{% endif %}{%if '1' in D9[0][4]%} <span class='blink2_mode'>{{D9[0][0]}}</span> {%elif '2' in D9[0][4]%}<span class='blink3_mode'>{{D9[0][0]}}</span> {%else%}{{D9[0][0]}} {%endif%}</td>
+                <td>&nbsp;</td>
+                {% if D8[0][0] in cart %} <td class='cart_found' onclick="scd_allocated({{D8[0][0]}},'{{D8[0][1]}}','{{D8[0][2]}}','{{D8[0][3]}}')">{% else %}<td class='cart' onclick="scd_allocated({{D8[0][0]}},'{{D8[0][1]}}','{{D8[0][2]}}','{{D8[0][3]}}')">{% endif %}{%if '1' in D8[0][4]%} <span class='blink2_mode'>{{D8[0][0]}}</span> {%elif '2' in D8[0][4]%}<span class='blink3_mode'>{{D8[0][0]}}</span> {%else%}{{D8[0][0]}} {%endif%}</td>
+                {% if D7[0][0] in cart %} <td class='cart_found' onclick="scd_allocated({{D7[0][0]}},'{{D7[0][1]}}','{{D7[0][2]}}','{{D7[0][3]}}')">{% else %}<td class='cart' onclick="scd_allocated({{D7[0][0]}},'{{D7[0][1]}}','{{D7[0][2]}}','{{D7[0][3]}}')">{% endif %}{%if '1' in D7[0][4]%} <span class='blink2_mode'>{{D7[0][0]}}</span> {%elif '2' in D7[0][4]%}<span class='blink3_mode'>{{D7[0][0]}}</span> {%else%}{{D7[0][0]}} {%endif%}</td>
+                <td>&nbsp;</td>
+                {% for x in range (9-buffer27|length)%}<td class='cart_buffer_clear'>&nbsp;</td>{% endfor%}
+                {% for x in buffer27 %}
+                {% if x[0] in cart %} <td class='cart_found' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% else %}<td class='cart_buffer' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% endif %}{% if x[0] in cmw %} <span class ='cmw'> {{x[0]}} </span> {% else %} {{x[0]}} {% endif %}</td>
+                {% endfor%}
+                {% if 'buffer27' in buffers_fifo and buffers_fifo.index('buffer27')+1 == 1 %}<td class='buffer_name_highprio'>{%else%}<td class='buffer_name'>{%endif%}B-RETURNS-18</td><td><span class='buffer_fifo'>{% if 'buffer27' in buffers_fifo %}{{buffers_fifo.index('buffer27')+1}}{% else %}&nbsp;{% endif %}</span></td>
+            </tr>
+            <tr><td><span class='buffer_fifo'>{% if 'buffer28' in buffers_fifo %}{{buffers_fifo.index('buffer28')+1}}{% else %}&nbsp;{% endif %}</span></td>
+                {% if 'buffer28' in buffers_fifo and buffers_fifo.index('buffer28')+1 == 1 %}<td class='buffer_name_highprio'>{%else%}<td class='buffer_name'>{%endif%}B-RETURNS-40</td>
+                {% for x in buffer28[::-1] %}
+                {% if x[0] in cart %} <td class='cart_found' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% else %}<td class='cart_buffer' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% endif %}{% if x[0] in cmw %} <span class ='cmw'> {{x[0]}} </span> {% else %} {{x[0]}} {% endif %}</td>
+                {% endfor%}
+                {% for x in range (9-buffer28|length)%}<td class='cart_buffer_clear'>&nbsp;</td>{% endfor%}
+                <td>&nbsp;</td>
+                {% if 'D-06' in acts %}<td class='station_active'>{% else %}<td class='station_name'>{% endif %}D-06</td>
+                {% if 'D-05' in acts %}<td class='station_active'>{% else %}<td class='station_name'>{% endif %}D-05</td>
+                <td>&nbsp;</td>
+                {% if 'D-04' in acts %}<td class='station_active'>{% else %}<td class='station_name'>{% endif %}D-04</td>
+                {% if 'D-03' in acts %}<td class='station_active'>{% else %}<td class='station_name'>{% endif %}D-03</td>
+                <td>&nbsp;</td>
+                {% if 'D-02' in acts %}<td class='station_active'>{% else %}<td class='station_name'>{% endif %}D-02</td>
+                {% if 'D-01' in acts %}<td class='station_active'>{% else %}<td class='station_name'>{% endif %}D-01</td>
+                <td>&nbsp;</td>
+                {% for x in range (9-buffer29|length)%}<td class='cart_buffer_clear'>&nbsp;</td>{% endfor%}
+                {% for x in buffer29 %}
+                {% if x[0] in cart %} <td class='cart_found' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% else %}<td class='cart_buffer' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% endif %}{% if x[0] in cmw %} <span class ='cmw'> {{x[0]}} </span> {% else %} {{x[0]}} {% endif %}</td>
+                {% endfor%}
+                {% if 'buffer29' in buffers_fifo and buffers_fifo.index('buffer29')+1 == 1 %}<td class='buffer_name_highprio'>{%else%}<td class='buffer_name'>{%endif%}B-RETURNS-19</td><td><span class='buffer_fifo'>{% if 'buffer29' in buffers_fifo %}{{buffers_fifo.index('buffer29')+1}}{% else %}&nbsp;{% endif %}</span></td>
+            </tr>
+            <tr><td><span class='buffer_fifo'>{% if 'buffer30' in buffers_fifo %}{{buffers_fifo.index('buffer30')+1}}{% else %}&nbsp;{% endif %}</span></td>
+                {% if 'buffer30' in buffers_fifo and buffers_fifo.index('buffer30')+1 == 1 %}<td class='buffer_name_highprio'>{%else%}<td class='buffer_name'>{%endif%}B-RETURNS-41</td>
+                {% for x in buffer30[::-1] %}
+                {% if x[0] in cart %} <td class='cart_found' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% else %}<td class='cart_buffer' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% endif %}{% if x[0] in cmw %} <span class ='cmw'> {{x[0]}} </span> {% else %} {{x[0]}} {% endif %}</td>
+                {% endfor%}
+                {% for x in range (9-buffer30|length)%}<td class='cart_buffer_clear'>&nbsp;</td>{% endfor%}
+                <td>&nbsp;</td>
+                {% if D6[0][0] in cart %} <td class='cart_found' onclick="scd_allocated({{D6[0][0]}},'{{D6[0][1]}}','{{D6[0][2]}}','{{D6[0][3]}}')">{% else %}<td class='cart' onclick="scd_allocated({{D6[0][0]}},'{{D6[0][1]}}','{{D6[0][2]}}','{{D6[0][3]}}')">{% endif %}{%if '1' in D6[0][4]%} <span class='blink2_mode'>{{D6[0][0]}}</span> {%elif '2' in D6[0][4]%}<span class='blink3_mode'>{{D6[0][0]}}</span> {%else%}{{D6[0][0]}} {%endif%}</td>
+                {% if D5[0][0] in cart %} <td class='cart_found' onclick="scd_allocated({{D5[0][0]}},'{{D5[0][1]}}','{{D5[0][2]}}','{{D5[0][3]}}')">{% else %}<td class='cart' onclick="scd_allocated({{D5[0][0]}},'{{D5[0][1]}}','{{D5[0][2]}}','{{D5[0][3]}}')">{% endif %}{%if '1' in D5[0][4]%} <span class='blink2_mode'>{{D5[0][0]}}</span> {%elif '2' in D5[0][4]%}<span class='blink3_mode'>{{D5[0][0]}}</span> {%else%}{{D5[0][0]}} {%endif%}</td>
+                <td>&nbsp;</td>
+                {% if D4[0][0] in cart %} <td class='cart_found' onclick="scd_allocated({{D4[0][0]}},'{{D4[0][1]}}','{{D4[0][2]}}','{{D4[0][3]}}')">{% else %}<td class='cart' onclick="scd_allocated({{D4[0][0]}},'{{D4[0][1]}}','{{D4[0][2]}}','{{D4[0][3]}}')">{% endif %}{%if '1' in D4[0][4]%} <span class='blink2_mode'>{{D4[0][0]}}</span> {%elif '2' in D4[0][4]%}<span class='blink3_mode'>{{D4[0][0]}}</span> {%else%}{{D4[0][0]}} {%endif%}</td>
+                {% if D3[0][0] in cart %} <td class='cart_found' onclick="scd_allocated({{D3[0][0]}},'{{D3[0][1]}}','{{D3[0][2]}}','{{D3[0][3]}}')">{% else %}<td class='cart' onclick="scd_allocated({{D3[0][0]}},'{{D3[0][1]}}','{{D3[0][2]}}','{{D3[0][3]}}')">{% endif %}{%if '1' in D3[0][4]%} <span class='blink2_mode'>{{D3[0][0]}}</span> {%elif '2' in D3[0][4]%}<span class='blink3_mode'>{{D3[0][0]}}</span> {%else%}{{D3[0][0]}} {%endif%}</td>
+                <td>&nbsp;</td>
+                {% if D2[0][0] in cart %} <td class='cart_found' onclick="scd_allocated({{D2[0][0]}},'{{D2[0][1]}}','{{D2[0][2]}}','{{D2[0][3]}}')">{% else %}<td class='cart' onclick="scd_allocated({{D2[0][0]}},'{{D2[0][1]}}','{{D2[0][2]}}','{{D2[0][3]}}')">{% endif %}{%if '1' in D2[0][4]%} <span class='blink2_mode'>{{D2[0][0]}}</span> {%elif '2' in D2[0][4]%}<span class='blink3_mode'>{{D2[0][0]}}</span> {%else%}{{D2[0][0]}} {%endif%}</td>
+                {% if D1[0][0] in cart %} <td class='cart_found' onclick="scd_allocated({{D1[0][0]}},'{{D1[0][1]}}','{{D1[0][2]}}','{{D1[0][3]}}')">{% else %}<td class='cart' onclick="scd_allocated({{D1[0][0]}},'{{D1[0][1]}}','{{D1[0][2]}}','{{D1[0][3]}}')">{% endif %}{%if '1' in D1[0][4]%} <span class='blink2_mode'>{{D1[0][0]}}</span> {%elif '2' in D1[0][4]%}<span class='blink3_mode'>{{D1[0][0]}}</span> {%else%}{{D1[0][0]}} {%endif%}</td>
+                <td>&nbsp;</td>
+                {% for x in range (9-buffer31|length)%}<td class='cart_buffer_clear'>&nbsp;</td>{% endfor%}
+                {% for x in buffer31 %}
+                {% if x[0] in cart %} <td class='cart_found' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% else %}<td class='cart_buffer' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% endif %}{% if x[0] in cmw %} <span class ='cmw'> {{x[0]}} </span> {% else %} {{x[0]}} {% endif %}</td>
+                {% endfor%}
+                {% if 'buffer31' in buffers_fifo and buffers_fifo.index('buffer31')+1 == 1 %}<td class='buffer_name_highprio'>{%else%}<td class='buffer_name'>{%endif%}B-RETURNS-20</td><td><span class='buffer_fifo'>{% if 'buffer31' in buffers_fifo %}{{buffers_fifo.index('buffer31')+1}}{% else %}&nbsp;{% endif %}</span></td>
+            </tr>
+            <tr><td><span class='buffer_fifo'>{% if 'buffer32' in buffers_fifo %}{{buffers_fifo.index('buffer32')+1}}{% else %}&nbsp;{% endif %}</span></td>
+                {% if 'buffer32' in buffers_fifo and buffers_fifo.index('buffer32')+1 == 1 %}<td class='buffer_name_highprio'>{%else%}<td class='buffer_name'>{%endif%}B-RETURNS-42</td>
+                {% for x in buffer32[::-1] %}
+                {% if x[0] in cart %} <td class='cart_found' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% else %}<td class='cart_buffer' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% endif %}{% if x[0] in cmw %} <span class ='cmw'> {{x[0]}} </span> {% else %} {{x[0]}} {% endif %}</td>
+                {% endfor%}
+                {% for x in range (9-buffer32|length)%}<td class='cart_buffer_clear'>&nbsp;</td>{% endfor%}
+                <td>&nbsp;</td>
+                {% if 'C-12' in acts %}<td class='station_active'>{% else %}<td class='station_name'>{% endif %}C-12</td>
+                {% if 'C-11' in acts %}<td class='station_active'>{% else %}<td class='station_name'>{% endif %}C-11</td>
+                <td>&nbsp;</td>
+                {% if 'C-10' in acts %}<td class='station_active'>{% else %}<td class='station_name'>{% endif %}C-10</td>
+                {% if 'C-09' in acts %}<td class='station_active'>{% else %}<td class='station_name'>{% endif %}C-09</td>
+                <td>&nbsp;</td>
+                {% if 'C-08' in acts %}<td class='station_active'>{% else %}<td class='station_name'>{% endif %}C-08</td>
+                {% if 'C-07' in acts %}<td class='station_active'>{% else %}<td class='station_name'>{% endif %}C-07</td>
+                <td>&nbsp;</td>
+                {% for x in range (9-buffer33|length)%}<td class='cart_buffer_clear'>&nbsp;</td>{% endfor%}
+                {% for x in buffer33 %}
+                {% if x[0] in cart %} <td class='cart_found' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% else %}<td class='cart_buffer' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% endif %}{% if x[0] in cmw %} <span class ='cmw'> {{x[0]}} </span> {% else %} {{x[0]}} {% endif %}</td>
+                {% endfor%}
+                {% if 'buffer33' in buffers_fifo and buffers_fifo.index('buffer33')+1 == 1 %}<td class='buffer_name_highprio'>{%else%}<td class='buffer_name'>{%endif%}B-RETURNS-21</td><td><span class='buffer_fifo'>{% if 'buffer33' in buffers_fifo %}{{buffers_fifo.index('buffer33')+1}}{% else %}&nbsp;{% endif %}</span></td>
+            </tr>
+            <tr><td><span class='buffer_fifo'>{% if 'buffer34' in buffers_fifo %}{{buffers_fifo.index('buffer34')+1}}{% else %}&nbsp;{% endif %}</span></td>
+                {% if 'buffer34' in buffers_fifo and buffers_fifo.index('buffer34')+1 == 1 %}<td class='buffer_name_highprio'>{%else%}<td class='buffer_name'>{%endif%}B-RETURNS-43</td>
+                {% for x in buffer34[::-1] %}
+                {% if x[0] in cart %} <td class='cart_found' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% else %}<td class='cart_buffer' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% endif %}{% if x[0] in cmw %} <span class ='cmw'> {{x[0]}} </span> {% else %} {{x[0]}} {% endif %}</td>
+                {% endfor%}
+                {% for x in range (9-buffer34|length)%}<td class='cart_buffer_clear'>&nbsp;</td>{% endfor%}
+                <td>&nbsp;</td>
+                {% if C12[0][0] in cart %} <td class='cart_found' onclick="scd_allocated({{C12[0][0]}},'{{C12[0][1]}}','{{C12[0][2]}}','{{C12[0][3]}}')">{% else %}<td class='cart' onclick="scd_allocated({{C12[0][0]}},'{{C12[0][1]}}','{{C12[0][2]}}','{{C12[0][3]}}')">{% endif %}{%if '1' in C12[0][4]%} <span class='blink2_mode'>{{C12[0][0]}}</span> {%elif '2' in C12[0][4]%}<span class='blink3_mode'>{{C12[0][0]}}</span> {%else%}{{C12[0][0]}} {%endif%}</td>
+                {% if C11[0][0] in cart %} <td class='cart_found' onclick="scd_allocated({{C11[0][0]}},'{{C11[0][1]}}','{{C11[0][2]}}','{{C11[0][3]}}')">{% else %}<td class='cart' onclick="scd_allocated({{C11[0][0]}},'{{C11[0][1]}}','{{C11[0][2]}}','{{C11[0][3]}}')">{% endif %}{%if '1' in C11[0][4]%} <span class='blink2_mode'>{{C11[0][0]}}</span> {%elif '2' in C11[0][4]%}<span class='blink3_mode'>{{C11[0][0]}}</span> {%else%}{{C11[0][0]}} {%endif%}</td>
+                <td>&nbsp;</td>
+                {% if C10[0][0] in cart %} <td class='cart_found' onclick="scd_allocated({{C10[0][0]}},'{{C10[0][1]}}','{{C10[0][2]}}','{{C10[0][3]}}')">{% else %}<td class='cart' onclick="scd_allocated({{C10[0][0]}},'{{C10[0][1]}}','{{C10[0][2]}}','{{C10[0][3]}}')">{% endif %}{%if '1' in C10[0][4]%} <span class='blink2_mode'>{{C10[0][0]}}</span> {%elif '2' in C10[0][4]%}<span class='blink3_mode'>{{C10[0][0]}}</span> {%else%}{{C10[0][0]}} {%endif%}</td>
+                {% if C9[0][0] in cart %} <td class='cart_found' onclick="scd_allocated({{C9[0][0]}},'{{C9[0][1]}}','{{C9[0][2]}}','{{C9[0][3]}}')">{% else %}<td class='cart' onclick="scd_allocated({{C9[0][0]}},'{{C9[0][1]}}','{{C9[0][2]}}','{{C9[0][3]}}')">{% endif %}{%if '1' in C9[0][4]%} <span class='blink2_mode'>{{C9[0][0]}}</span> {%elif '2' in C9[0][4]%}<span class='blink3_mode'>{{C9[0][0]}}</span> {%else%}{{C9[0][0]}} {%endif%}</td>
+                <td>&nbsp;</td>
+                {% if C8[0][0] in cart %} <td class='cart_found' onclick="scd_allocated({{C8[0][0]}},'{{C8[0][1]}}','{{C8[0][2]}}','{{C8[0][3]}}')">{% else %}<td class='cart' onclick="scd_allocated({{C8[0][0]}},'{{C8[0][1]}}','{{C8[0][2]}}','{{C8[0][3]}}')">{% endif %}{%if '1' in C8[0][4]%} <span class='blink2_mode'>{{C8[0][0]}}</span> {%elif '2' in C8[0][4]%}<span class='blink3_mode'>{{C8[0][0]}}</span> {%else%}{{C8[0][0]}} {%endif%}</td>
+                {% if C7[0][0] in cart %} <td class='cart_found' onclick="scd_allocated({{C7[0][0]}},'{{C7[0][1]}}','{{C7[0][2]}}','{{C7[0][3]}}')">{% else %}<td class='cart' onclick="scd_allocated({{C7[0][0]}},'{{C7[0][1]}}','{{C7[0][2]}}','{{C7[0][3]}}')">{% endif %}{%if '1' in C7[0][4]%} <span class='blink2_mode'>{{C7[0][0]}}</span> {%elif '2' in C7[0][4]%}<span class='blink3_mode'>{{C7[0][0]}}</span> {%else%}{{C7[0][0]}} {%endif%}</td>
+                <td>&nbsp;</td>
+                {% for x in range (9-buffer35|length)%}<td class='cart_buffer_clear'>&nbsp;</td>{% endfor%}
+                {% for x in buffer35 %}
+                {% if x[0] in cart %} <td class='cart_found' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% else %}<td class='cart_buffer' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% endif %}{% if x[0] in cmw %} <span class ='cmw'> {{x[0]}} </span> {% else %} {{x[0]}} {% endif %}</td>
+                {% endfor%}
+                {% if 'buffer35' in buffers_fifo and buffers_fifo.index('buffer35')+1 == 1 %}<td class='buffer_name_highprio'>{%else%}<td class='buffer_name'>{%endif%}B-RETURNS-22</td><td><span class='buffer_fifo'>{% if 'buffer35' in buffers_fifo %}{{buffers_fifo.index('buffer35')+1}}{% else %}&nbsp;{% endif %}</span></td>
+            </tr>
+            <tr><td><span class='buffer_fifo'>{% if 'buffer36' in buffers_fifo %}{{buffers_fifo.index('buffer36')+1}}{% else %}&nbsp;{% endif %}</span></td>
+                {% if 'buffer36' in buffers_fifo and buffers_fifo.index('buffer36')+1 == 1 %}<td class='buffer_name_highprio'>{%else%}<td class='buffer_name'>{%endif%}B-RETURNS-44</td>
+                {% for x in buffer36[::-1] %}
+                {% if x[0] in cart %} <td class='cart_found' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% else %}<td class='cart_buffer' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% endif %}{% if x[0] in cmw %} <span class ='cmw'> {{x[0]}} </span> {% else %} {{x[0]}} {% endif %}</td>
+                {% endfor%}
+                {% for x in range (9-buffer36|length)%}<td class='cart_buffer_clear'>&nbsp;</td>{% endfor%}
+                <td>&nbsp;</td>
+                {% if 'C-06' in acts %}<td class='station_active'>{% else %}<td class='station_name'>{% endif %}C-06</td>
+                {% if 'C-05' in acts %}<td class='station_active'>{% else %}<td class='station_name'>{% endif %}C-05</td>
+                <td>&nbsp;</td>
+                {% if 'C-04' in acts %}<td class='station_active'>{% else %}<td class='station_name'>{% endif %}C-04</td>
+                {% if 'C-03' in acts %}<td class='station_active'>{% else %}<td class='station_name'>{% endif %}C-03</td>
+                <td>&nbsp;</td>
+                {% if 'C-02' in acts %}<td class='station_active'>{% else %}<td class='station_name'>{% endif %}C-02</td>
+                {% if 'C-01' in acts %}<td class='station_active'>{% else %}<td class='station_name'>{% endif %}C-01</td>
+                <td>&nbsp;</td>
+                {% for x in range (9-buffer37|length)%}<td class='cart_buffer_clear'>&nbsp;</td>{% endfor%}
+                {% for x in buffer37 %}
+                {% if x[0] in cart %} <td class='cart_found' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% else %}<td class='cart_buffer' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% endif %}{% if x[0] in cmw %} <span class ='cmw'> {{x[0]}} </span> {% else %} {{x[0]}} {% endif %}</td>
+                {% endfor%}
+                {% if 'buffer37' in buffers_fifo and buffers_fifo.index('buffer37')+1 == 1 %}<td class='buffer_name_highprio'>{%else%}<td class='buffer_name'>{%endif%}B-RETURNS-23</td><td><span class='buffer_fifo'>{% if 'buffer37' in buffers_fifo %}{{buffers_fifo.index('buffer37')+1}}{% else %}&nbsp;{% endif %}</span></td>
+            </tr>
+            <tr><td><span class='buffer_fifo'>{% if 'buffer38' in buffers_fifo %}{{buffers_fifo.index('buffer38')+1}}{% else %}&nbsp;{% endif %}</span></td>
+                {% if 'buffer38' in buffers_fifo and buffers_fifo.index('buffer38')+1 == 1 %}<td class='buffer_name_highprio'>{%else%}<td class='buffer_name'>{%endif%}B-RETURNS-45</td>
+                {% for x in buffer38[::-1] %}
+                {% if x[0] in cart %} <td class='cart_found' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% else %}<td class='cart_buffer' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% endif %}{% if x[0] in cmw %} <span class ='cmw'> {{x[0]}} </span> {% else %} {{x[0]}} {% endif %}</td>
+                {% endfor%}
+                {% for x in range (9-buffer38|length)%}<td class='cart_buffer_clear'>&nbsp;</td>{% endfor%}
+                <td>&nbsp;</td>
+                {% if C6[0][0] in cart %} <td class='cart_found' onclick="scd_allocated({{C6[0][0]}},'{{C6[0][1]}}','{{C6[0][2]}}','{{C6[0][3]}}')">{% else %}<td class='cart' onclick="scd_allocated({{C6[0][0]}},'{{C6[0][1]}}','{{C6[0][2]}}','{{C6[0][3]}}')">{% endif %}{%if '1' in C6[0][4]%} <span class='blink2_mode'>{{C6[0][0]}}</span> {%elif '2' in C6[0][4]%}<span class='blink3_mode'>{{C6[0][0]}}</span> {%else%}{{C6[0][0]}} {%endif%}</td>
+                {% if C5[0][0] in cart %} <td class='cart_found' onclick="scd_allocated({{C5[0][0]}},'{{C5[0][1]}}','{{C5[0][2]}}','{{C5[0][3]}}')">{% else %}<td class='cart' onclick="scd_allocated({{C5[0][0]}},'{{C5[0][1]}}','{{C5[0][2]}}','{{C5[0][3]}}')">{% endif %}{%if '1' in C5[0][4]%} <span class='blink2_mode'>{{C5[0][0]}}</span> {%elif '2' in C5[0][4]%}<span class='blink3_mode'>{{C5[0][0]}}</span> {%else%}{{C5[0][0]}} {%endif%}</td>
+                <td>&nbsp;</td>
+                {% if C4[0][0] in cart %} <td class='cart_found' onclick="scd_allocated({{C4[0][0]}},'{{C4[0][1]}}','{{C4[0][2]}}','{{C4[0][3]}}')">{% else %}<td class='cart' onclick="scd_allocated({{C4[0][0]}},'{{C4[0][1]}}','{{C4[0][2]}}','{{C4[0][3]}}')">{% endif %}{%if '1' in C4[0][4]%} <span class='blink2_mode'>{{C4[0][0]}}</span> {%elif '2' in C4[0][4]%}<span class='blink3_mode'>{{C4[0][0]}}</span> {%else%}{{C4[0][0]}} {%endif%}</td>
+                {% if C3[0][0] in cart %} <td class='cart_found' onclick="scd_allocated({{C3[0][0]}},'{{C3[0][1]}}','{{C3[0][2]}}','{{C3[0][3]}}')">{% else %}<td class='cart' onclick="scd_allocated({{C3[0][0]}},'{{C3[0][1]}}','{{C3[0][2]}}','{{C3[0][3]}}')">{% endif %}{%if '1' in C3[0][4]%} <span class='blink2_mode'>{{C3[0][0]}}</span> {%elif '2' in C3[0][4]%}<span class='blink3_mode'>{{C3[0][0]}}</span> {%else%}{{C3[0][0]}} {%endif%}</td>
+                <td>&nbsp;</td>
+                {% if C2[0][0] in cart %} <td class='cart_found' onclick="scd_allocated({{C2[0][0]}},'{{C2[0][1]}}','{{C2[0][2]}}','{{C2[0][3]}}')">{% else %}<td class='cart' onclick="scd_allocated({{C2[0][0]}},'{{C2[0][1]}}','{{C2[0][2]}}','{{C2[0][3]}}')">{% endif %}{%if '1' in C2[0][4]%} <span class='blink2_mode'>{{C2[0][0]}}</span> {%elif '2' in C2[0][4]%}<span class='blink3_mode'>{{C2[0][0]}}</span> {%else%}{{C2[0][0]}} {%endif%}</td>
+                {% if C1[0][0] in cart %} <td class='cart_found' onclick="scd_allocated({{C1[0][0]}},'{{C1[0][1]}}','{{C1[0][2]}}','{{C1[0][3]}}')">{% else %}<td class='cart' onclick="scd_allocated({{C1[0][0]}},'{{C1[0][1]}}','{{C1[0][2]}}','{{C1[0][3]}}')">{% endif %}{%if '1' in C1[0][4]%} <span class='blink2_mode'>{{C1[0][0]}}</span> {%elif '2' in C1[0][4]%}<span class='blink3_mode'>{{C1[0][0]}}</span> {%else%}{{C1[0][0]}} {%endif%}</td>
+                <td>&nbsp;</td>
+                {% for x in range (9-buffer39|length)%}<td class='cart_buffer_clear'>&nbsp;</td>{% endfor%}
+                {% for x in buffer39 %}
+                {% if x[0] in cart %} <td class='cart_found' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% else %}<td class='cart_buffer' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% endif %}{% if x[0] in cmw %} <span class ='cmw'> {{x[0]}} </span> {% else %} {{x[0]}} {% endif %}</td>
+                {% endfor%}
+                {% if 'buffer39' in buffers_fifo and buffers_fifo.index('buffer39')+1 == 1 %}<td class='buffer_name_highprio'>{%else%}<td class='buffer_name'>{%endif%}B-RETURNS-24</td><td><span class='buffer_fifo'>{% if 'buffer39' in buffers_fifo %}{{buffers_fifo.index('buffer39')+1}}{% else %}&nbsp;{% endif %}</span></td>
+            </tr>
+            <tr><td><span class='buffer_fifo'>{% if 'buffer40' in buffers_fifo %}{{buffers_fifo.index('buffer40')+1}}{% else %}&nbsp;{% endif %}</span></td>
+                {% if 'buffer40' in buffers_fifo and buffers_fifo.index('buffer40')+1 == 1 %}<td class='buffer_name_highprio'>{%else%}<td class='buffer_name'>{%endif%}B-RETURNS-46</td>
+                {% for x in buffer40[::-1] %}
+                {% if x[0] in cart %} <td class='cart_found' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% else %}<td class='cart_buffer' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% endif %}{% if x[0] in cmw %} <span class ='cmw'> {{x[0]}} </span> {% else %} {{x[0]}} {% endif %}</td>
+                {% endfor%}
+                {% for x in range (9-buffer40|length)%}<td class='cart_buffer_clear'>&nbsp;</td>{% endfor%}
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+
+
+
+                {% for x in range (9-buffer41|length)%}<td class='cart_buffer_clear'>&nbsp;</td>{% endfor%}
+                {% for x in buffer41 %}
+                {% if x[0] in cart %} <td class='cart_found' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% else %}<td class='cart_buffer' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% endif %}{% if x[0] in cmw %} <span class ='cmw'> {{x[0]}} </span> {% else %} {{x[0]}} {% endif %}</td>
+                {% endfor%}
+                {% if 'buffer41' in buffers_fifo and buffers_fifo.index('buffer41')+1 == 1 %}<td class='buffer_name_highprio'>{%else%}<td class='buffer_name'>{%endif%}B-RETURNS-25</td><td><span class='buffer_fifo'>{% if 'buffer41' in buffers_fifo %}{{buffers_fifo.index('buffer41')+1}}{% else %}&nbsp;{% endif %}</span></td>
+            </tr>
+            <tr><td><span class='buffer_fifo'>{% if 'buffer42' in buffers_fifo %}{{buffers_fifo.index('buffer42')+1}}{% else %}&nbsp;{% endif %}</span></td>
+                {% if 'buffer42' in buffers_fifo and buffers_fifo.index('buffer42')+1 == 1 %}<td class='buffer_name_highprio'>{%else%}<td class='buffer_name'>{%endif%}B-RETURNS-47</td>
+                {% for x in buffer42[::-1] %}
+                {% if x[0] in cart %} <td class='cart_found' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% else %}<td class='cart_buffer' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% endif %}{% if x[0] in cmw %} <span class ='cmw'> {{x[0]}} </span> {% else %} {{x[0]}} {% endif %}</td>
+                {% endfor%}
+                {% for x in range (9-buffer42|length)%}<td class='cart_buffer_clear'>&nbsp;</td>{% endfor%}
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+
+                <td>&nbsp;</td>
+
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                {% for x in range (9-buffer43|length)%}<td class='cart_buffer_clear'>&nbsp;</td>{% endfor%}
+                {% for x in buffer43 %}
+                {% if x[0] in cart %} <td class='cart_found' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% else %}<td class='cart_buffer' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% endif %}{% if x[0] in cmw %} <span class ='cmw'> {{x[0]}} </span> {% else %} {{x[0]}} {% endif %}</td>
+                {% endfor%}
+                <td>&nbsp;</td>
+                {% if 'buffer41' in buffers_fifo and buffers_fifo.index('buffer41')+1 == 1 %}<td class='buffer_name_highprio'>{%else%}<td class='buffer_name'>{%endif%}B-RETURNS-25</td><td><span class='buffer_fifo'>{% if 'buffer41' in buffers_fifo %}{{buffers_fifo.index('buffer41')+1}}{% else %}&nbsp;{% endif %}</span></td>
+            </tr>
+            <tr><td><span class='buffer_fifo'>{% if 'buffer44' in buffers_fifo %}{{buffers_fifo.index('buffer44')+1}}{% else %}&nbsp;{% endif %}</span></td>
+                {% if 'buffer44' in buffers_fifo and buffers_fifo.index('buffer44')+1 == 1 %}<td class='buffer_name_highprio'>{%else%}<td class='buffer_name'>{%endif%}B-RETURNS-48</td>
+                {% for x in buffer44[::-1] %}
+                {% if x[0] in cart %} <td class='cart_found' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% else %}<td class='cart_buffer' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% endif %}{% if x[0] in cmw %} <span class ='cmw'> {{x[0]}} </span> {% else %} {{x[0]}} {% endif %}</td>
+                {% endfor%}
+                {% for x in range (9-buffer44|length)%}<td class='cart_buffer_clear'>&nbsp;</td>{% endfor%}
+                {% for n in range(10) %}<td>&nbsp;</td>{% endfor%}
+                {% for x in range (9-buffer45|length)%}<td class='cart_buffer_clear'>&nbsp;</td>{% endfor%}
+                {% for x in buffer45 %}
+                {% if x[0] in cart %} <td class='cart_found' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% else %}<td class='cart_buffer' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% endif %}{% if x[0] in cmw %} <span class ='cmw'> {{x[0]}} </span> {% else %} {{x[0]}} {% endif %}</td>
+                {% endfor%}
+                {% if 'buffer45' in buffers_fifo and buffers_fifo.index('buffer45')+1 == 1 %}<td class='buffer_name_highprio'>{%else%}<td class='buffer_name'>{%endif%}B-RETURNS-27</td><td><span class='buffer_fifo'>{% if 'buffer45' in buffers_fifo %}{{buffers_fifo.index('buffer45')+1}}{% else %}&nbsp;{% endif %}</span></td>
+            </tr>
+            <tr><td><span class='buffer_fifo'>{% if 'buffer46' in buffers_fifo %}{{buffers_fifo.index('buffer46')+1}}{% else %}&nbsp;{% endif %}</span></td>
+                {% if 'buffer46' in buffers_fifo and buffers_fifo.index('buffer46')+1 == 1 %}<td class='buffer_name_highprio'>{%else%}<td class='buffer_name'>{%endif%}B-RETURNS-49</td>
+                {% for x in buffer46[::-1] %}
+                {% if x[0] in cart %} <td class='cart_found' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% else %}<td class='cart_buffer' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% endif %}{% if x[0] in cmw %} <span class ='cmw'> {{x[0]}} </span> {% else %} {{x[0]}} {% endif %}</td>
+                {% endfor%}
+                {% for x in range (9-buffer46|length)%}<td class='cart_buffer_clear'>&nbsp;</td>{% endfor%}
+                {% for n in range(10) %}<td>&nbsp;</td>{% endfor%}
+                {% for x in range (9-buffer47|length)%}<td class='cart_buffer_clear'>&nbsp;</td>{% endfor%}
+                {% for x in buffer47 %}
+                {% if x[0] in cart %} <td class='cart_found' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% else %}<td class='cart_buffer' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% endif %}{% if x[0] in cmw %} <span class ='cmw'> {{x[0]}} </span> {% else %} {{x[0]}} {% endif %}</td>
+                {% endfor%}
+                {% if 'buffer47' in buffers_fifo and buffers_fifo.index('buffer47')+1 == 1 %}<td class='buffer_name_highprio'>{%else%}<td class='buffer_name'>{%endif%}B-RETURNS-28</td><td><span class='buffer_fifo'>{% if 'buffer47' in buffers_fifo %}{{buffers_fifo.index('buffer47')+1}}{% else %}&nbsp;{% endif %}</span></td>
+            </tr>
+            <tr><td><span class='buffer_fifo'>{% if 'buffer48' in buffers_fifo %}{{buffers_fifo.index('buffer48')+1}}{% else %}&nbsp;{% endif %}</span></td>
+                {% if 'buffer48' in buffers_fifo and buffers_fifo.index('buffer48')+1 == 1 %}<td class='buffer_name_highprio'>{%else%}<td class='buffer_name'>{%endif%}B-RETURNS-50</td>
+                {% for x in buffer48[::-1] %}
+                {% if x[0] in cart %} <td class='cart_found' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% else %}<td class='cart_buffer' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% endif %}{% if x[0] in cmw %} <span class ='cmw'> {{x[0]}} </span> {% else %} {{x[0]}} {% endif %}</td>
+                {% endfor%}
+                {% for x in range (9-buffer48|length)%}<td class='cart_buffer_clear'>&nbsp;</td>{% endfor%}
+                {% for n in range(10) %}<td>&nbsp;</td>{% endfor%}
+                {% for x in range (9-buffer49|length)%}<td class='cart_buffer_clear'>&nbsp;</td>{% endfor%}
+                {% for x in buffer49 %}
+                {% if x[0] in cart %} <td class='cart_found' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% else %}<td class='cart_buffer' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% endif %}{% if x[0] in cmw %} <span class ='cmw'> {{x[0]}} </span> {% else %} {{x[0]}} {% endif %}</td>
+                {% endfor%}
+                {% if 'buffer49' in buffers_fifo and buffers_fifo.index('buffer49')+1 == 1 %}<td class='buffer_name_highprio'>{%else%}<td class='buffer_name'>{%endif%}B-RETURNS-29</td><td><span class='buffer_fifo'>{% if 'buffer49' in buffers_fifo %}{{buffers_fifo.index('buffer49')+1}}{% else %}&nbsp;{% endif %}</span></td>
+            </tr>
+            <tr><td><span class='buffer_fifo'>{% if 'buffer50' in buffers_fifo %}{{buffers_fifo.index('buffer50')+1}}{% else %}&nbsp;{% endif %}</span></td>
+                {% if 'buffer50' in buffers_fifo and buffers_fifo.index('buffer50')+1 == 1 %}<td class='buffer_name_highprio'>{%else%}<td class='buffer_name'>{%endif%}B-RETURNS-51</td>
+                {% for x in buffer50[::-1] %}
+                {% if x[0] in cart %} <td class='cart_found' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% else %}<td class='cart_buffer' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% endif %}{% if x[0] in cmw %} <span class ='cmw'> {{x[0]}} </span> {% else %} {{x[0]}} {% endif %}</td>
+                {% endfor%}
+                {% for x in range (9-buffer50|length)%}<td class='cart_buffer_clear'>&nbsp;</td>{% endfor%}
+                {% for n in range(10) %}<td>&nbsp;</td>{% endfor%}
+                {% for x in range (9-buffer51|length)%}<td class='cart_buffer_clear'>&nbsp;</td>{% endfor%}
+                {% for x in buffer51 %}
+                {% if x[0] in cart %} <td class='cart_found' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% else %}<td class='cart_buffer' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% endif %}{% if x[0] in cmw %} <span class ='cmw'> {{x[0]}} </span> {% else %} {{x[0]}} {% endif %}</td>
+                {% endfor%}
+                {% if 'buffer51' in buffers_fifo and buffers_fifo.index('buffer51')+1 == 1 %}<td class='buffer_name_highprio'>{%else%}<td class='buffer_name'>{%endif%}B-RETURNS-30</td><td><span class='buffer_fifo'>{% if 'buffer51' in buffers_fifo %}{{buffers_fifo.index('buffer51')+1}}{% else %}&nbsp;{% endif %}</span></td>
+            </tr>
+            <tr><td><span class='buffer_fifo'>{% if 'buffer52' in buffers_fifo %}{{buffers_fifo.index('buffer52')+1}}{% else %}&nbsp;{% endif %}</span></td>
+                {% if 'buffer52' in buffers_fifo and buffers_fifo.index('buffer52')+1 == 1 %}<td class='buffer_name_highprio'>{%else%}<td class='buffer_name'>{%endif%}B-RETURNS-52</td>
+                {% for x in buffer52[::-1] %}
+                {% if x[0] in cart %} <td class='cart_found' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% else %}<td class='cart_buffer' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% endif %}{% if x[0] in cmw %} <span class ='cmw'> {{x[0]}} </span> {% else %} {{x[0]}} {% endif %}</td>
+                {% endfor%}
+                {% for x in range (9-buffer52|length)%}<td class='cart_buffer_clear'>&nbsp;</td>{% endfor%}
+                {% for n in range(10) %}<td>&nbsp;</td>{% endfor%}
+                {% for x in range (9-buffer53|length)%}<td class='cart_buffer_clear'>&nbsp;</td>{% endfor%}
+                {% for x in buffer53 %}
+                {% if x[0] in cart %} <td class='cart_found' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% else %}<td class='cart_buffer' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% endif %}{% if x[0] in cmw %} <span class ='cmw'> {{x[0]}} </span> {% else %} {{x[0]}} {% endif %}</td>
+                {% endfor%}
+                {% if 'buffer53' in buffers_fifo and buffers_fifo.index('buffer53')+1 == 1 %}<td class='buffer_name_highprio'>{%else%}<td class='buffer_name'>{%endif%}B-RETURNS-31</td><td><span class='buffer_fifo'>{% if 'buffer53' in buffers_fifo %}{{buffers_fifo.index('buffer53')+1}}{% else %}&nbsp;{% endif %}</span></td>
+            </tr>
+            <tr><td><span class='buffer_fifo'>{% if 'buffer54' in buffers_fifo %}{{buffers_fifo.index('buffer54')+1}}{% else %}&nbsp;{% endif %}</span></td>
+                {% if 'buffer54' in buffers_fifo and buffers_fifo.index('buffer54')+1 == 1 %}<td class='buffer_name_highprio'>{%else%}<td class='buffer_name'>{%endif%}B-RETURNS-53</td>
+                {% for x in buffer54[::-1] %}
+                {% if x[0] in cart %} <td class='cart_found' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% else %}<td class='cart_buffer' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% endif %}{% if x[0] in cmw %} <span class ='cmw'> {{x[0]}} </span> {% else %} {{x[0]}} {% endif %}</td>
+                {% endfor%}
+                {% for x in range (9-buffer54|length)%}<td class='cart_buffer_clear'>&nbsp;</td>{% endfor%}
+                {% for n in range(10) %}<td>&nbsp;</td>{% endfor%}
+                {% for x in range (9-buffer55|length)%}<td class='cart_buffer_clear'>&nbsp;</td>{% endfor%}
+                {% for x in buffer55 %}
+                {% if x[0] in cart %} <td class='cart_found' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% else %}<td class='cart_buffer' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% endif %}{% if x[0] in cmw %} <span class ='cmw'> {{x[0]}} </span> {% else %} {{x[0]}} {% endif %}</td>
+                {% endfor%}
+                {% if 'buffer55' in buffers_fifo and buffers_fifo.index('buffer55')+1 == 1 %}<td class='buffer_name_highprio'>{%else%}<td class='buffer_name'>{%endif%}B-RETURNS-32</td><td><span class='buffer_fifo'>{% if 'buffer55' in buffers_fifo %}{{buffers_fifo.index('buffer55')+1}}{% else %}&nbsp;{% endif %}</span></td>
+            </tr>
+            <tr><td><span class='buffer_fifo'>{% if 'buffer56' in buffers_fifo %}{{buffers_fifo.index('buffer56')+1}}{% else %}&nbsp;{% endif %}</span></td>
+                {% if 'buffer56' in buffers_fifo and buffers_fifo.index('buffer56')+1 == 1 %}<td class='buffer_name_highprio'>{%else%}<td class='buffer_name'>{%endif%}B-RETURNS-54</td>
+                {% for x in buffer56[::-1] %}
+                {% if x[0] in cart %} <td class='cart_found' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% else %}<td class='cart_buffer' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% endif %}{% if x[0] in cmw %} <span class ='cmw'> {{x[0]}} </span> {% else %} {{x[0]}} {% endif %}</td>
+                {% endfor%}
+                {% for x in range (9-buffer56|length)%}<td class='cart_buffer_clear'>&nbsp;</td>{% endfor%}
+                {% for n in range(10) %}<td>&nbsp;</td>{% endfor%}
+                {% for x in range (9-buffer57|length)%}<td class='cart_buffer_clear'>&nbsp;</td>{% endfor%}
+                {% for x in buffer57 %}
+                {% if x[0] in cart %} <td class='cart_found' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% else %}<td class='cart_buffer' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% endif %}{% if x[0] in cmw %} <span class ='cmw'> {{x[0]}} </span> {% else %} {{x[0]}} {% endif %}</td>
+                {% endfor%}
+                {% if 'buffer57' in buffers_fifo and buffers_fifo.index('buffer57')+1 == 1 %}<td class='buffer_name_highprio'>{%else%}<td class='buffer_name'>{%endif%}B-RETURNS-33</td><td><span class='buffer_fifo'>{% if 'buffer57' in buffers_fifo %}{{buffers_fifo.index('buffer57')+1}}{% else %}&nbsp;{% endif %}</span></td>
+            </tr>
+            <tr><td><span class='buffer_fifo'>{% if 'buffer58' in buffers_fifo %}{{buffers_fifo.index('buffer58')+1}}{% else %}&nbsp;{% endif %}</span></td>
+                {% if 'buffer58' in buffers_fifo and buffers_fifo.index('buffer58')+1 == 1 %}<td class='buffer_name_highprio'>{%else%}<td class='buffer_name'>{%endif%}B-RETURNS-55</td>
+                {% for x in buffer58[::-1] %}
+                {% if x[0] in cart %} <td class='cart_found' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% else %}<td class='cart_buffer' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% endif %}{% if x[0] in cmw %} <span class ='cmw'> {{x[0]}} </span> {% else %} {{x[0]}} {% endif %}</td>
+                {% endfor%}
+                {% for x in range (9-buffer58|length)%}<td class='cart_buffer_clear'>&nbsp;</td>{% endfor%}
+                {% for n in range(10) %}<td>&nbsp;</td>{% endfor%}
+                {% for x in range (9-buffer59|length)%}<td class='cart_buffer_clear'>&nbsp;</td>{% endfor%}
+                {% for x in buffer59 %}
+                {% if x[0] in cart %} <td class='cart_found' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% else %}<td class='cart_buffer' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% endif %}{% if x[0] in cmw %} <span class ='cmw'> {{x[0]}} </span> {% else %} {{x[0]}} {% endif %}</td>
+                {% endfor%}
+                {% if 'buffer59' in buffers_fifo and buffers_fifo.index('buffer59')+1 == 1 %}<td class='buffer_name_highprio'>{%else%}<td class='buffer_name'>{%endif%}B-RETURNS-34</td><td><span class='buffer_fifo'>{% if 'buffer59' in buffers_fifo %}{{buffers_fifo.index('buffer59')+1}}{% else %}&nbsp;{% endif %}</span></td>
+            </tr>
+            <tr><td><span class='buffer_fifo'>{% if 'buffer60' in buffers_fifo %}{{buffers_fifo.index('buffer60')+1}}{% else %}&nbsp;{% endif %}</span></td>
+                {% if 'buffer60' in buffers_fifo and buffers_fifo.index('buffer60')+1 == 1 %}<td class='buffer_name_highprio'>{%else%}<td class='buffer_name'>{%endif%}B-RETURNS-56</td>
+                {% for x in buffer60[::-1] %}
+                {% if x[0] in cart %} <td class='cart_found' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% else %}<td class='cart_buffer' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% endif %}{% if x[0] in cmw %} <span class ='cmw'> {{x[0]}} </span> {% else %} {{x[0]}} {% endif %}</td>
+                {% endfor%}
+                {% for x in range (9-buffer60|length)%}<td class='cart_buffer_clear'>&nbsp;</td>{% endfor%}
+                {% for n in range(10) %}<td>&nbsp;</td>{% endfor%}
+                {% for x in range (9-buffer61|length)%}<td class='cart_buffer_clear'>&nbsp;</td>{% endfor%}
+                {% for x in buffer61 %}
+                {% if x[0] in cart %} <td class='cart_found' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% else %}<td class='cart_buffer' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% endif %}{% if x[0] in cmw %} <span class ='cmw'> {{x[0]}} </span> {% else %} {{x[0]}} {% endif %}</td>
+                {% endfor%}
+                {% if 'buffer61' in buffers_fifo and buffers_fifo.index('buffer61')+1 == 1 %}<td class='buffer_name_highprio'>{%else%}<td class='buffer_name'>{%endif%}B-RETURNS-35</td><td><span class='buffer_fifo'>{% if 'buffer61' in buffers_fifo %}{{buffers_fifo.index('buffer61')+1}}{% else %}&nbsp;{% endif %}</span></td>
+            </tr>
+            <tr><td><span class='buffer_fifo'>{% if 'buffer62' in buffers_fifo %}{{buffers_fifo.index('buffer62')+1}}{% else %}&nbsp;{% endif %}</span></td>
+                {% if 'buffer62' in buffers_fifo and buffers_fifo.index('buffer62')+1 == 1 %}<td class='buffer_name_highprio'>{%else%}<td class='buffer_name'>{%endif%}B-RETURNS-57</td>
+                {% for x in buffer62[::-1] %}
+                {% if x[0] in cart %} <td class='cart_found' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% else %}<td class='cart_buffer' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% endif %}{% if x[0] in cmw %} <span class ='cmw'> {{x[0]}} </span> {% else %} {{x[0]}} {% endif %}</td>
+                {% endfor%}
+                {% for x in range (9-buffer62|length)%}<td class='cart_buffer_clear'>&nbsp;</td>{% endfor%}
+                {% for n in range(21) %}<td>&nbsp;</td>{% endfor%}
+            </tr>
+            <tr><td><span class='buffer_fifo'>{% if 'buffer63' in buffers_fifo %}{{buffers_fifo.index('buffer63')+1}}{% else %}&nbsp;{% endif %}</span></td>
+                {% if 'buffer63' in buffers_fifo and buffers_fifo.index('buffer63')+1 == 1 %}<td class='buffer_name_highprio'>{%else%}<td class='buffer_name'>{%endif%}B-RETURNS-58</td>
+                {% for x in buffer63[::-1] %}
+                {% if x[0] in cart %} <td class='cart_found' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% else %}<td class='cart_buffer' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% endif %}{% if x[0] in cmw %} <span class ='cmw'> {{x[0]}} </span> {% else %} {{x[0]}} {% endif %}</td>
+                {% endfor%}
+                {% for x in range (9-buffer63|length)%}<td class='cart_buffer_clear'>&nbsp;</td>{% endfor%}
+                {% for n in range(21) %}<td>&nbsp;</td>{% endfor%}
+            </tr>
+            <tr><td><span class='buffer_fifo'>{% if 'buffer64' in buffers_fifo %}{{buffers_fifo.index('buffer64')+1}}{% else %}&nbsp;{% endif %}</span></td>
+                {% if 'buffer64' in buffers_fifo and buffers_fifo.index('buffer64')+1 == 1 %}<td class='buffer_name_highprio'>{%else%}<td class='buffer_name'>{%endif%}B-RETURNS-59</td>
+                {% for x in buffer64[::-1] %}
+                {% if x[0] in cart %} <td class='cart_found' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% else %}<td class='cart_buffer' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% endif %}{% if x[0] in cmw %} <span class ='cmw'> {{x[0]}} </span> {% else %} {{x[0]}} {% endif %}</td>
+                {% endfor%}
+                {% for x in range (9-buffer64|length)%}<td class='cart_buffer_clear'>&nbsp;</td>{% endfor%}
+                {% for n in range(21) %}<td>&nbsp;</td>{% endfor%}
+            </tr>
+            <tr><td><span class='buffer_fifo'>{% if 'buffer65' in buffers_fifo %}{{buffers_fifo.index('buffer65')+1}}{% else %}&nbsp;{% endif %}</span></td>
+                {% if 'buffer65' in buffers_fifo and buffers_fifo.index('buffer65')+1 == 1 %}<td class='buffer_name_highprio'>{%else%}<td class='buffer_name'>{%endif%}B-RETURNS-60</td>
+                {% for x in buffer65[::-1] %}
+                {% if x[0] in cart %} <td class='cart_found' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% else %}<td class='cart_buffer' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% endif %}{% if x[0] in cmw %} <span class ='cmw'> {{x[0]}} </span> {% else %} {{x[0]}} {% endif %}</td>
+                {% endfor%}
+                {% for x in range (9-buffer65|length)%}<td class='cart_buffer_clear'>&nbsp;</td>{% endfor%}
+                {% for n in range(1) %}<td>&nbsp;</td>{% endfor%}
+                <td class='station_active'>BUFF</td>
+                <td class='station_active'>ALLO</td>
+                <td>&nbsp;</td>
+                <td class='station_active'>STO2</td>
+                <td class='station_active'>STO4</td>
+                <td>&nbsp;</td>
+                <td class='station_active'>ACTS</td>
+                <td class='station_active'>SUPP</td>
+                {% for n in range(10) %}<td>&nbsp;</td>{% endfor%}
+                <td class='station_active'>BACKLOG</td><td>&nbsp;</td>
+            </tr>
+            <tr><td><span class='buffer_fifo'>{% if 'buffer66' in buffers_fifo %}{{buffers_fifo.index('buffer66')+1}}{% else %}&nbsp;{% endif %}</span></td>
+                {% if 'buffer66' in buffers_fifo and buffers_fifo.index('buffer66')+1 == 1 %}<td class='buffer_name_highprio'>{%else%}<td class='buffer_name'>{%endif%}B-RETURNS-61</td>
+                {% for x in buffer66[::-1] %}
+                {% if x[0] in cart %} <td class='cart_found' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% else %}<td class='cart_buffer' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% endif %}{% if x[0] in cmw %} <span class ='cmw'> {{x[0]}} </span> {% else %} {{x[0]}} {% endif %}</td>
+                {% endfor%}
+                {% for x in range (9-buffer66|length)%}<td class='cart_buffer_clear'>&nbsp;</td>{% endfor%}
+                {% for n in range(1) %}<td>&nbsp;</td>{% endfor%}
+                <td class="score" rowspan='2'>{{buff}}</td>
+                <td class="score" rowspan='2'>{{allo}}</td>
+                <td rowspan='2'>&nbsp;</td>
+                <td class="score" rowspan='2'>{{sto2}}</td>
+                <td class="score" rowspan='2'>{{sto4}}</td>
+                <td rowspan='2'>&nbsp;</td>
+                <td class="score" rowspan='2'>{{acts | length}}</td>
+                {% if supp_status > 0 %}<td class="score_alert" rowspan='2'> {%else%}<td class="score" rowspan='2'>{% endif%}{{supp_count}}</td>
+                {% for n in range(10) %}<td rowspan='2'>&nbsp;</td>{% endfor%}
+                <td class="score" rowspan='2'>{{backlog}}</td><td>&nbsp;</td>
+            </tr>
+            <tr><td><span class='buffer_fifo'>{% if 'buffer67' in buffers_fifo %}{{buffers_fifo.index('buffer67')+1}}{% else %}&nbsp;{% endif %}</span></td>
+                {% if 'buffer67' in buffers_fifo and buffers_fifo.index('buffer67')+1 == 1 %}<td class='buffer_name_highprio'>{%else%}<td class='buffer_name'>{%endif%}B-RETURNS-62</td>
+                {% for x in buffer67[::-1] %}
+                {% if x[0] in cart %} <td class='cart_found' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% else %}<td class='cart_buffer' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% endif %}{% if x[0] in cmw %} <span class ='cmw'> {{x[0]}} </span> {% else %} {{x[0]}} {% endif %}</td>
+                {% endfor%}
+                {% for x in range (9-buffer67|length)%}<td class='cart_buffer_clear'>&nbsp;</td>{% endfor%}
+                {% for n in range(2) %}<td>&nbsp;</td>{% endfor%}
+            </tr>
+            <tr><td><span class='buffer_fifo'>{% if 'buffer68' in buffers_fifo %}{{buffers_fifo.index('buffer68')+1}}{% else %}&nbsp;{% endif %}</span></td>
+                {% if 'buffer68' in buffers_fifo and buffers_fifo.index('buffer68')+1 == 1 %}<td class='buffer_name_highprio'>{%else%}<td class='buffer_name'>{%endif%}B-RETURNS-63</td>
+                {% for x in buffer68[::-1] %}
+                {% if x[0] in cart %} <td class='cart_found' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% else %}<td class='cart_buffer' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% endif %}{% if x[0] in cmw %} <span class ='cmw'> {{x[0]}} </span> {% else %} {{x[0]}} {% endif %}</td>
+                {% endfor%}
+                {% for x in range (9-buffer68|length)%}<td class='cart_buffer_clear'>&nbsp;</td>{% endfor%}
+                {% for n in range(21) %}<td>&nbsp;</td>{% endfor%}
+            </tr>
+            <tr><td><span class='buffer_fifo'>{% if 'buffer69' in buffers_fifo %}{{buffers_fifo.index('buffer69')+1}}{% else %}&nbsp;{% endif %}</span></td>
+                {% if 'buffer69' in buffers_fifo and buffers_fifo.index('buffer69')+1 == 1 %}<td class='buffer_name_highprio'>{%else%}<td class='buffer_name'>{%endif%}B-RETURNS-64</td>
+                {% for x in buffer69[::-1] %}
+                {% if x[0] in cart %} <td class='cart_found' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% else %}<td class='cart_buffer' onclick="scd_closed({{x[0]}},'{{x[1]}}','{{x[2]}}')">{% endif %}{% if x[0] in cmw %} <span class ='cmw'> {{x[0]}} </span> {% else %} {{x[0]}} {% endif %}</td>
+                {% endfor%}
+                {% for x in range (9-buffer69|length)%}<td class='cart_buffer_clear'>&nbsp;</td>{% endfor%}
+                {% for n in range(21) %}<td>&nbsp;</td>{% endfor%}
+            </tr>
+        </tbody>
+</table>
