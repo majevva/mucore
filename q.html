@@ -1,4 +1,57 @@
-   <table width=100% border="0" cellpadding="0" cellspacing="0" style='text-align:center; font-size:12px; margin:auto; color:white;user-select: none;'>
+<!DOCTYPE html>
+<html lang="en" style="height:100%; margin:0px">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="60">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='ico/rmap.ico') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <script type="text/javascript" src="{{ url_for('static',filename='alerts.js') }}"></script>
+    <script type="text/javascript">
+        function startTime(){
+            var today=new Date();
+            var h=today.getHours();
+            var m=today.getMinutes();
+            var s=today.getSeconds();
+            h=checkTime(h);
+            m=checkTime(m);
+            s=checkTime(s);
+            document.getElementById('txt').innerHTML=""+h+":"+m+":"+s+""
+            t=setTimeout('startTime()',500);
+            }
+        function checkTime(i){
+            if (i<10){
+                i="0" + i;
+            }
+            return i;
+        }
+    </script>
+    <style>
+        table, th, td {
+            padding:.5px 2px;
+            margin: .5px .5px;
+        }
+        td{
+            color:white;
+        }
+    </style>
+</head>
+
+
+<body style="height: 100%;margin: 0px; padding: 0px;" onload="startTime()">
+    <table width=100% style="user-select: none;">
+        <tr style='padding-top:-5px; margin-top:-5px;'>
+            <th width=32%><h2 style='font-size:3vh;text-align:left;padding-top:0px; margin-top:0px;'>RETURNS <span style='color:rgb(106, 255, 47);'><b>LIVE</b></span> MAP</h2></th>
+            <th width=33%><h2 style='font-size:3vh;text-align:center;padding-top:0px; margin-top:0px;'><div id="txt" style="padding-left:63px;"></div></h2></th>
+            <form method='POST'action='/returns'>
+            <th width=34%><h2 style='font-size:3vh;text-align:right;padding-top:0px; margin-top:0px;'>CART: <input type='input' id='cart' name='cart' maxlength="5" size="5" style='width:100px;font-size:2vh;vertical-align:top;margin-top:3px;text-align:center;'> <input type='submit' name='find_cart_btn' id='find_cart_btn' value='Find' width="9" style='width:100px;font-size:2vh;vertical-align:top;margin-top:3px;text-align:center;'></h2></th>
+            </form>
+        </tr>
+    </table>
+    <hr style='margin-top:3px;'>
+    <div id='map'>
+    <table width=100% border="0" cellpadding="0" cellspacing="0" style='text-align:center; font-size:12px; margin:auto; color:white;user-select: none;'>
         <tbody>
             <tr><td>&nbsp;</td><td><span style='color:white;'>&nbsp;</span></td>{% for n in range(19) %}<td>&nbsp;</td>{% endfor%}
                 {% for x in range (9-buffer1|length)%}<td class='cart_buffer_clear'>&nbsp;</td>{% endfor%}
@@ -727,4 +780,34 @@
                 {% for n in range(21) %}<td>&nbsp;</td>{% endfor%}
             </tr>
         </tbody>
-</table>
+    </table>
+    <hr style='margin-bottom:0px;'>
+    <table width=100%>
+        <tr>
+            <th width=33%></th>
+            <th width=33%></th>
+
+        </tr>
+    </table>
+</div>
+    <script>
+        function scd_closed(cartno, date, items){
+            swal("Cart no.: "+cartno+" ("+items+" pkgs)", "Closed at: "+date);
+        };
+
+        function scd_allocated(cartno, date, station, process_time){
+            swal("Cart no.: "+cartno, "Allocated at: "+date+" to station no: "+station+".    Process Time: "+process_time+ " minutes (Process Time without NTT)");
+        }
+
+        function legend(){
+            swal("","");
+        }
+
+        function myTimer() {
+            document.getElementById("map").innerHTML = d.toLocaleTimeString();
+        }
+        var myVar = setInterval(myTimer, 1000);
+
+    </script>
+</body>
+</html>
